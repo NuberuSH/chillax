@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url(./assets/photo-1620646233562-f2a31ad24425.jfif);
+}
+
+.background{
+    display:flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    
+}
+
+.box{ 
+    flex: 1;
+    align-items: center;
+
+}
+
+.first{
+    /* background-color: black; */
+    background: rgb(0,0,0);
+background: linear-gradient(90deg, rgba(0,0,0,0.4198413496257878) 0%, rgba(0,0,0,1) 48%, rgba(0,0,0,0.42264247007396705) 100%);
+    
+}
+
+.second{
+    background-color: brown;
+    flex: 2;
+}
+
+.third{
+    fleX: 1.5;
+    /* background-color: black; */
+    background: rgb(0,0,0);
+background: linear-gradient(90deg, rgba(0,0,0,0.4198413496257878) 0%, rgba(0,0,0,1) 48%, rgba(0,0,0,0.42264247007396705) 100%);
+}
