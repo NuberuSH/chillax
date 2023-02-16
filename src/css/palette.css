@@ -1,0 +1,28 @@
+
+
+/* ------LIGHT THEME------------ */
+
+@media screen and (prefers-color-scheme: light) {
+
+    * {
+        --bg-color: #F0F0F0;
+        --regular-text-color: #333;
+        --border-color: #333;
+    }
+  
+}
+
+
+/* ------DARK THEME------------- */
+
+@media screen and (prefers-color-scheme: dark) {
+
+    * {
+        --bg-color: #222;
+        --regular-text-color: #EEE;
+        --border-color: silver;
+        --header-a-color: silver;
+        --header-a-hover-color: white;
+    }
+  
+}
