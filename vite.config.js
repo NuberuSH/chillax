@@ -11,6 +11,7 @@ export default {
   publicDir: "../public",
   build: {
     outDir: "../dist",
-    assetsDir: "./"
+    assetsDir: "./",
+    target: "esnext"
   }
 };
