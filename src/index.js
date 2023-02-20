@@ -10,7 +10,7 @@ async function runLandingPage () {
     'backgroundImage3.jpg',
     'backgroundImage4.webp',
     'backgroundImage5.jpg',
-    'gbackgroundImage6.jpg',
+    'backgroundImage6.jpg',
     'backgroundImage7.jpg',
     'backgroundImage8.jpg',
     'backgroundImage9.webp',
