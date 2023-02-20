@@ -3,10 +3,12 @@
 
 img {
   width: 100px;
+  position: fixed;
+  margin-top: -15px;
 }
 
 nav {
-  margin: 27px auto 0;
+  margin: 25px auto;
   position: relative;
   width: 590px;
   height: 50px;
@@ -124,4 +126,5 @@ p {
 
 span {
   color: #fff;
+  font-size: 10px;
 }
