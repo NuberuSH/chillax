@@ -1,0 +1,25 @@
+@import "https://fonts.googleapis.com/css2?family=Ubuntu&display=swap%22";
+
+body {
+  font-size: 12px;
+  font-family: sans-serif;
+  background: #442c50;
+  background-color: #222;
+}
+
+#logo {
+  width: 200px;
+  position: relative;
+}
+
+p {
+  text-align: center;
+  font-size: 25px;
+  color: white;
+}
+
+#myb {
+  margin-left: 25%;
+  margin-top: 10%;
+  position: fixed;
+}
