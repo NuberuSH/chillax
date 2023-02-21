@@ -12,15 +12,15 @@ body {
   position: relative;
 }
 
-p {
+/* p {
   margin-top: 50px;
   text-align: center;
   font-size: 25px;
   color: white;
-}
+} */
 
 #myb {
-  margin-left: 25%;
-  margin-top: 7%;
+  margin-left: 7%;
+  margin-top: 3%;
   position: fixed;
 }
