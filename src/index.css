@@ -31,7 +31,7 @@ header {
   justify-content: space-between;
   height: 90px;
   padding: 0 var(--lateral-margin);
-  background-color: #22222285;
+  background-color: #33333385;
 
   /* border-bottom: 2px solid var(--border-color); <--- ESTO SOLO FUERA DEL LANDING PAGE */
 }
