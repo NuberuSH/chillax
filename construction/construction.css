@@ -61,6 +61,12 @@ nav {
   text-decoration: underline;
 }
 
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 main {
   height: 800px;
   background-repeat: no-repeat;
