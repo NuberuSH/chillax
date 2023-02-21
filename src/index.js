@@ -21,7 +21,7 @@ async function runLandingPage () {
   let position = Math.floor(Math.random() * images.length);
 
   while (true) {
-    main.style.backgroundImage = `url("${images[position]}")`;
+    main.style.backgroundImage = `url("/images/background/${images[position]}")`;
     curtain.style.opacity = 0;
     position = position < images.length-1 ? position + 1 : 0;
     await sleep(8000);
