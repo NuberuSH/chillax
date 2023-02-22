@@ -1,6 +1,8 @@
-@import "./css/palette.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-* {
+/* * {
   margin: 0;
   padding: 0;
 
@@ -8,7 +10,6 @@
 
   font-family: sans-serif;
 
-  /* color: var(--regular-text-color); SOLO FUERA DEL LANDING PAGE */
   color: #eee;
 }
 
@@ -33,7 +34,6 @@ header {
   padding: 0 var(--lateral-margin);
   background-color: #33333385;
 
-  /* border-bottom: 2px solid var(--border-color); <--- ESTO SOLO FUERA DEL LANDING PAGE */
 }
 
 header > * {
@@ -54,7 +54,7 @@ nav {
 
 .header-nav-a:link,
 .header-nav-a:visited {
-  color: silver; /* var(--header-a-color); */
+  color: silver;
   text-shadow: 0 0 5px black;
 }
 
@@ -104,4 +104,4 @@ footer {
 
 footer p {
   color: var(--regular-text-color);
-}
+} */
