@@ -4,32 +4,75 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chillax Landing</title>
+  <title>Chillax</title>
+  <link rel="icon" href="images/logo/logopnyo.svg" type="image/x-icon">
   <link rel="stylesheet" href="./index.css">
   <script type="module" src="./index.js" defer></script>
 </head>
-<body>
-  <main id="landingpage-main">
-    <div id="main-visible">
-      <header>
-        <a href="/" class="header-nav-a">
-          <img src="images/logo/chillaxLetrasBlancas-edit.svg" alt="logo" class="logo-nav-bar" />
+<body class="bg-fixed h-screen bg-center bg-cover bg-[url('/images/background/backgroundImage1.jpg')] changing-bg">
+  <div>
+  <main class="navbar nav-visible w-screen flex flex-col justify-between z-10">
+    <div class="flex flex-col h-1/6 justify-between">
+        <nav class="flex border-b border-transparent justify-between h-24 px-4 bg-gray-300 bg-opacity-40">
+        <a href="/" class="flex items-center gap-5 ml-4">
+          <img class="logo h-14" src="images/logo/chillaxLetrasBlancas-edit.svg" alt="logo"  />
         </a>
-        <nav>
-          <a class="header-nav-a" href="./construction/construction.html">Catálogo</a>
-          <a class="header-nav-a" href="./construction/construction.html">Trending</a>
-          <a class="header-nav-a" href="./construction/construction.html">Proyecto</a>
+        <ul class="flex text-2xl font-semibold text-black">
+          <li class="pr-3 pl-0 hover:text-web-boton duration-300 ease-in-out text-center flex items-center"><a
+              href="./construction/construction.html">Catálogo</a>
+          </li>
+          <li class="px-3 hover:text-web-boton duration-300 ease-in-out flex items-center"><a
+              href="./construction/construction.html">Trending</a>
+          </li>
+          <li class="px-3 hover:text-web-boton duration-300 ease-in-out flex items-center"><a
+              href="./construction/construction.html">Proyecto</a>
+          </li>
+        </ul>
         </nav>
-      </header>
-      <section>
-        <p>CHILLAX es tu aliad@ a la hora de combatir el aburrimiento.</p>
-        <p>¡Explora ya entre miles y miles de posibilidades de entretenimiento!</p>
-      </section>
     </div>
-    <div id="curtain"></div>
-  </main>
-  <footer>
-    <p>© CHILLAX 2023</p>
+    </main>
+
+    <div class="text-shadow-2 text-white mt-32 mb-40 font-semibold px-14 h-3/4">
+      <p class="w-[600px] text-2xl">CHILLAX es tu aliada a la hora de combatir el aburrimiento.</p>
+      <p class="w-[600px] text-2xl">¡Explora ya entre miles y miles de posibilidades de entretenimiento!</p>
+    </div>
+
+    <div class="custom-shape-divider-bottom opacity-75">
+      <img class="w-full h-14" src="/images/wavesOpacity.svg" alt="">
+    </div>
+    <section id="info"
+      class="description-body h-auto flex flex-col justify-center bg-slate-300 opacity-95">
+      <div class="py-16 flex justify-around flex-wrap">
+        <article class="w-40 flex flex-col gap-4 mx-20 mb-10">
+          <img class="h-20 filter dark:invert" src="/icons/monitor-tv.svg" alt="" />
+          <strong class="text-2xl text-center font-bold break-words">Experiencia personalizada</strong>
+          <p class="text-center text-gray-600 ">Nos adaptamos a cada usuario para proporcionar una
+            información única</p>
+        </article>
+    
+        <article class="w-40 flex flex-col gap-4 mx-20 mb-10">
+          <img class="h-20 filter dark:invert" src="/icons/world.svg" alt="" />
+          <strong class="text-2xl text-center font-bold">Todo en uno</strong>
+          <p class="text-center text-gray-600 ">Desde nuestra aplicación podras introducir, gestionar y
+            visualizar todos
+            tus
+            datos y recomendaciones</p>
+        </article>
+    
+        <article class="w-40 flex flex-col gap-4 mx-20 mb-10">
+          <img class="h-20 filter dark:invert" src="/icons/shield.svg" alt="" />
+          <strong class="text-2xl text-center font-bold">Segura y eficaz</strong>
+          <p class="text-center text-gray-600 ">Tus datos estan protegidos frente a terceros</p>
+        </article>
+      </div>
+      <div class="flex justify-center">
+        <a aria-label="Link to our app" href='https://app.mysweetdreams.es/login'>
+          <button class="button-web mx-auto text-black ">COMENZAR YA</button>
+        </a>
+      </div>
+    </section>
+  <footer class="h-fit flex justify-center font-caveat bg-gray-700">
+    <p class="text-center">© CHILLAX 2023</p>
   </footer>
 </body>
 </html>

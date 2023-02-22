@@ -2,106 +2,156 @@
 @tailwind components;
 @tailwind utilities;
 
-/* * {
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
   margin: 0;
-  padding: 0;
-
-  --lateral-margin: 80px;
-
-  font-family: sans-serif;
-
-  color: #eee;
 }
 
-html {
-  background-color: var(--bg-color);
-}
-
-a:link,
-a:visited {
-  color: inherit;
-  text-decoration: none;
-}
-
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
 body {
-  height: 100vh;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  height: 90px;
-  padding: 0 var(--lateral-margin);
-  background-color: #33333385;
-
-}
-
-header > * {
-  display: flex;
-  align-items: center;
   height: 100%;
 }
 
-nav {
-  display: flex;
-  gap: 2.8rem;
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-.logo-nav-bar {
-  height: 50%;
-  width: auto;
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
 }
 
-.header-nav-a:link,
-.header-nav-a:visited {
-  color: silver;
-  text-shadow: 0 0 5px black;
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
-.header-nav-a:hover {
-  color: var(--header-a-hover-color);
-  text-decoration: underline;
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
-main {
-  height: 800px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
 }
 
-main section {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  font-size: 2.1rem;
-  width: 490px;
-  padding: var(--lateral-margin);
-  text-shadow: 0 0 12px #0008;
+@font-face {
+  font-family: bluetea;
+  src: url("../fonts/Bluetea.ttf");
 }
 
-#main-visible {
-  position: relative;
-  z-index: 10;
+.text-shadow-2 {
+  text-shadow:
+    -2px 2px 0 #000,
+    2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000;
 }
 
-#curtain {
-  position: absolute;
-  top: 0;
-  background-color: #000;
+.text-shadow-1 {
+  text-shadow:
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
+.custom-shape-divider-bottom {
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  transition: 1.2s opacity ease-in-out;
-  opacity: 1;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
 }
 
-footer {
-  display: flex;
-  justify-content: center;
-  border-top: 2px solid var(--border-color);
-  padding: 21px 0;
+@font-face {
+  font-family: bluetea;
+  src: url("../fonts/Bluetea.ttf");
 }
 
-footer p {
-  color: var(--regular-text-color);
-} */
+@font-face {
+  font-family: Quicksand;
+  font-weight: 400;
+  src: url("../fonts/Quicksand.ttf");
+}
+
+@font-face {
+  font-family: Caveat;
+  font-weight: 600;
+  src: url("../fonts/Caveat.ttf");
+}
+
+@layer components {
+  .button-web {
+    @apply font-quicksand font-bold w-fit px-4 sm:px-10 py-2 text-lg sm:text-2xl bg-web-boton hover:bg-web-boton2 hover:text-white rounded-2xl sm:rounded-full mb-10 shadow-lg duration-500 ease-in-out hover:resize hover:ring-2 ring-offset-4 hover:scale-105 ring-web-boton;
+  }
+
+  .web-out-of-focus {
+    @apply fixed left-0 top-0 w-screen h-screen bg-black opacity-40 z-10;
+  }
+
+  .web-in-focus {
+    @apply fixed bg-transparent left-0 top-0 w-screen h-screen duration-1000 -z-10;
+  }
+
+  .menu-open {
+    @apply fixed right-0 top-0 w-[300px] h-screen flex flex-col border-gray-700 shadow-2xl bg-web-fondo dark:bg-web-formBgDarkMode duration-500 z-20;
+  }
+
+  .menu-closed {
+    @apply fixed right-[-100%] top-0 w-[300px] h-screen flex flex-col duration-500 z-20;
+  }
+
+  .nav-visible {
+    @apply fixed duration-300;
+  }
+
+  .nav-not-visible {
+    @apply fixed translate-y-[-100%] duration-300;
+  }
+}
