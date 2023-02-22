@@ -1,4 +1,4 @@
-.container {
+#container {
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
@@ -36,9 +36,14 @@
 }
 
 .title {
-    text-align: center; font-size: large;
+    text-align: center;
+    font-size: large;
 }
 
-#next {
-    margin-top: 2%;
+#show-more {
+    margin-top: 3%;
+}
+
+#show-more:hover {
+    cursor: pointer;
 }
