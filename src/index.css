@@ -108,7 +108,7 @@ footer p {
   color: var(--regular-text-color);
 }
 
-@media (max-width: 740px) and (orientation: portrait) {
+@media (max-width: 740px) {
 
   :root {
     font-size: .8rem;
