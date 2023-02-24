@@ -17,7 +17,7 @@ main {
 }
 
 @media (max-width: 740px) {
-    main img {
-        transform: scale(.7);
+    #myb {
+        width: 100%;
     }
 }
