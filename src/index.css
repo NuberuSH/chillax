@@ -47,7 +47,7 @@ nav {
 }
 
 #logo-nav-bar {
-  height: 50%;
+  height: 100%;
 }
 
 .header-nav-a:link,
@@ -123,10 +123,11 @@ footer p {
   header > a {
     display: flex;
     justify-content: center;
+    height: 50%;
   }
 
-  #logo-nav-bar {
-    height: 63%;
+  header > a:first-child {
+      height: 60%;
   }
 
   main {
