@@ -5,18 +5,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CHILLAX</title>
-  <link rel="stylesheet" href="./movies.css">
-  <script defer src="./movies.js"></script>
+  <link rel="stylesheet" href="./css/movies.css">
+  <script defer src="./js/movies.js"></script>
 </head>
 <body>
-  <div class="container">
+  <div id="container">
+    <select name="Filtro por género" id="genre-filter" onchange="genreFilter()">
+      <option value="0">Selecciona un género</option>
+    </select>
     <h1>Películas</h1>
     <hr>
     <div id="movie-list">
 
     </div>
     <!-- <div id="previous" onclick="previousPage()">Página anterior</div> -->
-    <div id="next" onclick="nextPage()">Mostrar más</div>
+    <div id="show-more" onclick="showMore()">Mostrar más</div>
   </div>
   
 </body>
