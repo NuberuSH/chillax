@@ -133,6 +133,14 @@ footer {
 footer p {
   color: white;
   font-size: small;
+  text-align: justify;
+  text-align-last: center;
+}
+
+@media (max-width: 899px) {
+  footer p {
+    padding: 0 25px;
+  }
 }
 
 .api-disclaimer {
