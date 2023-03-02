@@ -1,0 +1,23 @@
+/*@import "https://fonts.googleapis.com/css2?family=Ubuntu&display=swap%22";*/
+@import "/css/palette.css";
+
+* {
+  color: #eee;
+}
+
+html {
+  background-color: var(--bg-color);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+}
+
+@media (max-width: 740px) {
+    #myb {
+        width: 100%;
+    }
+}

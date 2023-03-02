@@ -1,0 +1,130 @@
+/* stylelint-disable-next-line import-notation */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap%22");
+
+img {
+  width: 100px;
+  position: fixed;
+  margin-top: -15px;
+}
+
+nav {
+  margin: 25px auto;
+  position: relative;
+  width: 590px;
+  height: 50px;
+  background-color: silver;
+  border-radius: 8px;
+  font-size: 0;
+}
+
+nav a {
+  line-height: 50px;
+  height: 100%;
+  font-size: 15px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgb(0 0 0);
+  cursor: pointer;
+}
+
+nav .animation {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  z-index: 0;
+  transition: all 0.5s ease 0s;
+  border-radius: 8px;
+}
+
+a:nth-child(1) {
+  width: 100px;
+}
+
+a:nth-child(2) {
+  width: 110px;
+}
+
+a:nth-child(3) {
+  width: 100px;
+}
+
+a:nth-child(4) {
+  width: 160px;
+}
+
+a:nth-child(5) {
+  width: 120px;
+}
+
+nav .start-home,
+a:nth-child(1):hover ~ .animation {
+  width: 100px;
+  left: 0;
+  background-color: #e74c3c;
+}
+
+nav .start-about,
+a:nth-child(2):hover ~ .animation {
+  width: 110px;
+  left: 100px;
+  background-color: #e74c3c;
+}
+
+nav .start-blog,
+a:nth-child(3):hover ~ .animation {
+  width: 100px;
+  left: 210px;
+  background-color: #e74c3c;
+}
+
+nav .start-portefolio,
+a:nth-child(4):hover ~ .animation {
+  width: 160px;
+  left: 310px;
+  background-color: #e74c3c;
+}
+
+nav .start-contact,
+a:nth-child(5):hover ~ .animation {
+  width: 120px;
+  left: 470px;
+  background-color: #e74c3c;
+}
+
+body {
+  font-size: 12px;
+  font-family: sans-serif;
+  background: #442c50;
+  background-color: #222;
+}
+
+h1 {
+  text-align: center;
+  margin: 40px 0;
+  text-align: center;
+  font-size: 30px;
+  color: #ecf0f1;
+  text-shadow: 2px 2px 4px #000;
+
+  /* font-family: "Cherry Swash", cursive; */
+}
+
+p {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: #ecf0f1;
+
+  /* font-family: "Cherry Swash", cursive; */
+  font-size: 16px;
+}
+
+span {
+  color: #fff;
+  font-size: 10px;
+}
