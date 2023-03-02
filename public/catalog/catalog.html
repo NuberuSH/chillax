@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo | Chillax</title>
+  <link rel="icon" href="/images/logo/favicon.svg" />
+  <link rel="stylesheet" href="./catalog.css">
+  <script defer src="./catalog.js"></script>
+</head>
+<body>
+  <div id="container">
+    <header>
+      <a href="/" class="header-nav-a">
+        <img src="/images/logo/chillaxSombras.svg" alt="logo" id="logo-nav-bar" />
+      </a>
+      <!-- <nav>
+        <a class="header-nav-a" href="./catalog/catalog.html">Catálogo</a>
+        <a class="header-nav-a" href="./construction/construction.html">Trending</a>
+        <a class="header-nav-a" href="./construction/construction.html">Proyecto</a>
+      </nav> -->
+    </header>
+    <select name="Filtro por género" id="genre-filter" onchange="genreFilter()">
+      <option value="0">Selecciona un género</option>
+    </select>
+    <h1 class="section-title">Películas</h1>
+    <hr>
+    <div id="movie-list">
+
+    </div>
+    <!-- <div id="previous" onclick="previousPage()">Página anterior</div> -->
+    <div id="show-more" onclick="showMore()">Mostrar más</div>
+      <footer>
+        <p>© CHILLAX 2023</p>
+        <p class="api-disclaimer">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+        <img src="/images/logo/TMDB_long.svg" alt="Logo de TMDB" class="api-logo">        
+      </footer>
+  </div>
+  
+</body>
+</html>
