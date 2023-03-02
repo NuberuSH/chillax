@@ -5,17 +5,17 @@ async function runLandingPage () {
   const main = document.getElementById('landingpage-main');
   const curtain = document.getElementById('curtain');
   const images = [
-    'backgroundImage1.jpg',
-    'backgroundImage2.jpg',
-    'backgroundImage3.jpg',
+    'backgroundImage1.webp',
+    'backgroundImage2.webp',
+    'backgroundImage3.webp',
     'backgroundImage4.webp',
-    'backgroundImage5.jpg',
-    'backgroundImage6.jpg',
-    'backgroundImage7.jpg',
-    'backgroundImage8.jpg',
+    'backgroundImage5.webp',
+    'backgroundImage6.webp',
+    'backgroundImage7.webp',
+    'backgroundImage8.webp',
     'backgroundImage9.webp',
-    'backgroundImage10.jpg',
-    'backgroundImage11.jpg'
+    'backgroundImage10.webp',
+    'backgroundImage11.webp'
   ];
 
   let position = Math.floor(Math.random() * images.length);
