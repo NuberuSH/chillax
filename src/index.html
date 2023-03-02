@@ -1,1 +1,27 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHILLAX</title>
+  <link rel="stylesheet" href="./css/catalog.css">
+  <script defer src="./js/catalog.js"></script>
+</head>
+<body>
+  <div id="container">
+    <select name="Filtro por género" id="genre-filter" onchange="genreFilter()">
+      <option value="0">Selecciona un género</option>
+    </select>
+    <h1>Películas</h1>
+    <hr>
+    <div id="movie-list">
+
+    </div>
+    <!-- <div id="previous" onclick="previousPage()">Página anterior</div> -->
+    <div id="show-more" onclick="showMore()">Mostrar más</div>
+  </div>
+  
+</body>
+</html>

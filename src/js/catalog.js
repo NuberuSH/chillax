@@ -1,9 +1,8 @@
 let page = 1;
 let genre = 0;
-console.log(page);
-sessionStorage.idMovie = "550";
 
 function getMovieList() {
+  getGenres();
   if (genre == 0) {
     fetch(`https://api.themoviedb.org/3/discover/movie?api_key=039e4f7f61c4c831908c02f8c3e9aba0&language=es-ES&sort_by=popularity.desc&include_adult=false&include_video=false&page=${+page}`)
     .then(response => {
@@ -16,9 +15,9 @@ function getMovieList() {
         let divMovie = document.createElement("div");
         divMovie.className = "movie";
         divMovie.id = data.results[i].id;
-        divMovie.onclick = function() {
-          showMovieInfo(data.results[i].id);
-        };
+        // divMovie.onclick = function() {
+        //   showMovieInfo(data.results[i].id);
+        // };
         let img = document.createElement("img");
         img.className = "poster";
         img.src = `https://image.tmdb.org/t/p/w500${data.results[i].poster_path}`;
@@ -50,10 +49,10 @@ function getMovieList() {
         let divMovie = document.createElement("div");
         divMovie.className = "movie";
         divMovie.id = data.results[i].id;
-        divMovie.onclick = function() {
-          sessionStorage.idMovie = data.results[i].id;
-          location.href = "../movie-info.html";
-        };
+        // divMovie.onclick = function() {
+        //   sessionStorage.idMovie = data.results[i].id;
+        //   location.href = "../movie-info.html";
+        // };
         let img = document.createElement("img");
         img.className = "poster";
         img.src = `https://image.tmdb.org/t/p/w500${data.results[i].poster_path}`;
@@ -120,7 +119,8 @@ let list = document.getElementById("movie-list");
 // }
 
 //Petición a la api para añadir los options al select que filtrará por género
-fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=039e4f7f61c4c831908c02f8c3e9aba0&language=es-ES`)
+function getGenres() {
+  fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=039e4f7f61c4c831908c02f8c3e9aba0&language=es-ES`)
   .then(response => {
     return response.json();
   })
@@ -136,51 +136,12 @@ fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=039e4f7f61c4c831908
   .catch(error => {
     console.error(error);
   });
+}
 
 //Esta función incrementa en 1 el valor de page, realizando una petición a la página siguiente de la api
 function showMore() {
   page++;
-  if (genre !== 0) {
-    getMovieList();
-  } else {
-    showMoreDefault();
-  }
-}
-
-function showMoreDefault() {
-  fetch(`https://api.themoviedb.org/3/discover/movie?api_key=039e4f7f61c4c831908c02f8c3e9aba0&language=es-ES&sort_by=popularity.desc&include_adult=false&include_video=false&page=${+page}`)
-    .then(response => {
-      return response.json();
-    })
-    .then(data => { //Recibimos la respuesta de la api (data) y recorremos la lista que contiene (results) para mostrar las películas en el html
-      for (let i = 0; i < data.results.length; i++) {
-        let divMovie = document.createElement("div");
-        divMovie.className = "movie";
-        divMovie.id = data.results[i].id;
-        divMovie.onclick = function() {
-          sessionStorage.idMovie = data.results[i].id;
-          location.href = "../movie-info.html";
-        };
-        let img = document.createElement("img");
-        img.className = "poster";
-        img.src = `https://image.tmdb.org/t/p/w500${data.results[i].poster_path}`;
-        img.alt = data.results[i].title;
-        let divMovieFooter = document.createElement("div");
-        divMovieFooter.className = "movie-footer";
-        let footerTitle = document.createElement("div");
-        footerTitle.className = "title";
-        footerTitle.innerText = data.results[i].title;
-        divMovieFooter.appendChild(footerTitle);
-        divMovie.appendChild(img);
-        divMovie.appendChild(divMovieFooter);
-
-        list.appendChild(divMovie);
-      }
-    })
-    .catch(error => {
-      console.error(error);
-    });
-}
+  getMovieList();
 
 //Esta función disminuye en 1 el valor de page, realizando una petición a la página anterior de la api
 // function previousPage() {
