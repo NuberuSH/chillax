@@ -1,7 +1,21 @@
-/* @import "https://fonts.googleapis.com/css2?family=Ubuntu&display=swap%22"; */
-@import "/css/palette.css";
+@import "https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto+Slab:wght@100&display=swap";
+@import "/palette.css";
 
 * {
+  margin: 0;
+  padding: 0;
+
+  --lateral-margin: 80px;
+
+  font-family:
+    "Dancing Script",
+    cursive;
+  font-family:
+    "Roboto Slab",
+    serif;
+  font-weight: 700;
+
+  /* color: var(--regular-text-color); SOLO FUERA DEL LANDING PAGE */
   color: #eee;
 }
 
@@ -16,8 +30,94 @@ main {
   background-color: #222;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  padding: 0 var(--lateral-margin);
+  background-color: #33333385;
+
+  /* border-bottom: 2px solid var(--border-color); <--- ESTO SOLO FUERA DEL LANDING PAGE */
+}
+
+header > * {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: larger;
+  font-weight: 900;
+}
+
+nav {
+  gap: 2.8rem;
+}
+
+#logo-nav-bar {
+  height: 100%;
+}
+
+.header-nav-a:link,
+.header-nav-a:visited {
+  color: silver;
+
+  /* var(--header-a-color); */
+  text-shadow: 0 0 5px black;
+}
+
+.header-nav-a:hover {
+  color: var(--header-a-hover-color);
+  text-decoration: underline;
+}
+
 @media (max-width: 740px) {
   #myb {
     width: 100%;
   }
 }
+
+@media (max-width: 740px) {
+  :root {
+    font-size: 0.8rem;
+  }
+
+  header {
+    flex-direction: column;
+    height: 120px;
+    align-items: center;
+  }
+
+  header > a {
+    display: flex;
+    justify-content: center;
+    height: 50%;
+  }
+
+  header > a:first-child {
+    height: 60%;
+  }
+
+  main {
+    height: 570px;
+  }
+
+  main section {
+    padding: 25px;
+    width: calc(100% - 50px);
+  }
+
+  section > p {
+    /* font-size: 1.4rem; */
+    flex-wrap: wrap;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  border-top: 2px solid var(--border-color);
+  padding: 21px 0;
+}
+
+/* footer p {
+  color: var(--regular-text-color);
+} */
