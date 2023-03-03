@@ -1,6 +1,11 @@
 @import "https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto+Slab:wght@100&display=swap";
 @import "/palette.css";
 
+@font-face {
+    font-family: 'Cavalier Bold';
+    src: url('../fonts/Cavalier-Bold.ttf') format('truetype');
+}
+
 html {
   font-family:
     "Dancing Script", /* esta no se esta aplicando por la de abajo */
@@ -47,9 +52,24 @@ nav {
 
 .section-title {
   max-width: fit-content;
-  background-color: antiquewhite;
-  padding: 10px;
+  color: #CCC;
+  font: 3rem 'Cavalier Bold';
+  background-color: #333;
+  padding: 10px 10px 5px 10px;
+  border: 1px solid #000;
   border-radius: 5px;
+}
+
+#filters {
+  background-color: #333;
+  padding: 1.2rem;
+  border-radius: 9px;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-label {
+  color: #CCC;
 }
 
 #movie-list {
@@ -108,8 +128,14 @@ nav {
   text-align: center;
 }
 
+#show-more-container {
+  display: flex;
+  justify-content: center;
+}
+
 #show-more {
-  max-width: fit-content;
+  min-width: fit-content;
+  max-width: 60%;
   margin: 30px 0;
   background-color: darkred;
   color: #CCC;
@@ -122,8 +148,8 @@ nav {
 #show-more:hover {
   cursor: pointer;
   color: #FFF;
-  background-color: #ff7f7f;
-  transform: scale(1.1);
+  background-color: #f37373;
+  transform: scale(1.0j);
 }
 
 footer {
