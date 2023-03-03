@@ -3,7 +3,7 @@
 
 html {
   font-family:
-    "Dancing Script",
+    "Dancing Script", /* esta no se esta aplicando por la de abajo */
     cursive;
   font-family:
     "Roboto Slab",
@@ -73,13 +73,16 @@ nav {
 }
 
 .movie {
+  color: #AAA;
   box-shadow: 0 0 22px 1px rgb(0 0 0 / 10%);
-  background-color: white;
+  background-color: var(--bg-color);
   border-radius: 10px;
   transition: 0.25s all;
+  font-size: 1rem;
 }
 
 .movie:hover {
+  color: #FFF;
   box-shadow: 0 0 22px 3px rgb(0 0 0 / 25%);
   transition: 0.25s all;
   transform: scale(1.1);
@@ -93,7 +96,8 @@ nav {
 }
 
 .movie-footer {
-  margin-top: 5px;
+  margin: 5px 0;
+  padding: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,14 +106,13 @@ nav {
 .title {
   height: auto;
   text-align: center;
-  font-size: large;
-  padding: 5px;
 }
 
 #show-more {
   max-width: fit-content;
-  margin-top: 3%;
+  margin: 30px 0;
   background-color: darkred;
+  color: #CCC;
   font-weight: 700;
   border-radius: 5px;
   padding: 10px;
@@ -118,8 +121,9 @@ nav {
 
 #show-more:hover {
   cursor: pointer;
+  color: #FFF;
   background-color: #ff7f7f;
-  padding: 12px;
+  transform: scale(1.1);
 }
 
 footer {
