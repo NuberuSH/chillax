@@ -2,9 +2,14 @@
 
 @media screen and (prefers-color-scheme: light) {
   * {
-    --bg-color: #f0f0f0;
+    /* --bg-color: #f0f0f0;
     --regular-text-color: #333;
-    --border-color: #333;
+    --border-color: #333; */
+    --bg-color: #222;
+    --regular-text-color: #eee;
+    --border-color: silver;
+    --header-a-color: silver;
+    --header-a-hover-color: white;
   }
 }
 
