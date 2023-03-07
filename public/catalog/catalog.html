@@ -21,16 +21,23 @@
         <a class="header-nav-a" href="./construction/construction.html">Proyecto</a>
       </nav> -->
     </header>
-    <select name="Filtro por género" id="genre-filter" onchange="genreFilter()">
-      <option value="0">Selecciona un género</option>
-    </select>
     <h1 class="section-title">Películas</h1>
     <hr>
+
+    <div id="filters">
+      <label class="filter-label">Género
+        <select name="Filtro por género" id="genre-filter" onchange="genreFilter()">
+          <option value="0">Selecciona un género</option>
+        </select>
+      </label>
+    </div>
     <div id="movie-list">
 
     </div>
     <!-- <div id="previous" onclick="previousPage()">Página anterior</div> -->
-    <div id="show-more" onclick="showMore()">Mostrar más</div>
+    <div id="show-more-container">
+      <div id="show-more" onclick="showMore()">Mostrar más</div>
+    </div>
       <footer>
         <p>© CHILLAX 2023</p>
         <p class="api-disclaimer">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>

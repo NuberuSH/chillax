@@ -8,7 +8,7 @@
   --lateral-margin: 80px;
 
   font-family:
-    "Dancing Script",
+    "Dancing Script", /* esta no se esta aplicando por la de abajo */
     cursive;
   font-family:
     "Roboto Slab",
