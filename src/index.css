@@ -1,12 +1,7 @@
+/* stylelint-disable at-rule-no-unknown */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@font-face {
-  font-family: RobotoSlab;
-  font-weight: 700;
-  src: url("../fonts/RobotoSlab.ttf");
-}
 
 /*
   1. Use a more-intuitive box-sizing model.
@@ -33,16 +28,9 @@ body {
 }
 
 /*
-  4. Typographic tweaks! Set font for entire page
-*/
-/* stylelint-disable-next-line no-duplicate-selectors */
-* {
-  font-family: RobotoSlab;
-  font-weight: 700;
-}
-
-/*
-  5. Typographic tweaks! Improve text rendering
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
 */
 body {
   line-height: 1.5;
@@ -92,6 +80,51 @@ h6 {
   isolation: isolate;
 }
 
+@font-face {
+  font-family: RobotoSlab;
+  font-weight: 700;
+  src: url("../fonts/RobotoSlab.ttf");
+}
+
+@layer components {
+  .button-web {
+    @apply font-robotoslab font-bold w-fit px-4 sm:px-10 py-2 text-lg sm:text-2xl bg-web-boton hover:bg-web-boton2 hover:text-white rounded-2xl sm:rounded-full mb-10 shadow-lg duration-500 ease-in-out hover:resize hover:ring-2 ring-offset-4 hover:scale-105 ring-web-boton;
+  }
+
+  .web-out-of-focus {
+    @apply fixed left-0 top-0 w-screen h-screen bg-black opacity-40 z-10;
+  }
+
+  .web-in-focus {
+    @apply fixed bg-transparent left-0 top-0 w-screen h-screen duration-1000 -z-10;
+  }
+
+  .menu-open {
+    @apply fixed right-0 top-0 w-[300px] h-screen flex flex-col border-gray-700 shadow-2xl  bg-web-fondo  duration-500 z-20;
+  }
+
+  .menu-closed {
+    @apply fixed right-[-100%] top-0 w-[300px] h-screen flex flex-col duration-500 z-20;
+  }
+
+  .nav-visible {
+    @apply fixed duration-300;
+  }
+
+  .nav-not-visible {
+    @apply fixed translate-y-[-100%] duration-300;
+  }
+}
+
+.custom-shape-divider-bottom-1669113248 {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
 .text-shadow-2 {
   text-shadow:
     -2px 2px 0 #000,
@@ -108,41 +141,6 @@ h6 {
     -1px -1px 0 #000;
 }
 
-.custom-shape-divider-bottom {
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-}
-
-@layer components {
-  .button-web {
-    @apply font-RobotoSlab font-bold w-fit px-4 sm:px-10 py-2 text-lg sm:text-2xl bg-web-boton hover:bg-web-boton2 hover:text-white rounded-2xl sm:rounded-full mb-10 shadow-lg duration-500 ease-in-out hover:resize hover:ring-2 ring-offset-4 hover:scale-105 ring-web-boton;
-  }
-
-  .web-out-of-focus {
-    @apply fixed left-0 top-0 w-screen h-screen bg-black opacity-40 z-10;
-  }
-
-  .web-in-focus {
-    @apply fixed bg-transparent left-0 top-0 w-screen h-screen duration-1000 -z-10;
-  }
-
-  .menu-open {
-    @apply fixed right-0 top-0 w-[300px] h-screen flex flex-col border-gray-700 shadow-2xl bg-web-fondo dark:bg-web-formBgDarkMode duration-500 z-20;
-  }
-
-  .menu-closed {
-    @apply fixed right-[-100%] top-0 w-[300px] h-screen flex flex-col duration-500 z-20;
-  }
-
-  .nav-visible {
-    @apply fixed duration-300;
-  }
-
-  .nav-not-visible {
-    @apply fixed translate-y-[-100%] duration-300;
-  }
+.social:hover {
+  filter: invert(48%) sepia(35%) saturate(923%) hue-rotate(183deg) brightness(77%) contrast(102%);
 }

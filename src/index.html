@@ -9,67 +9,122 @@
   <link rel="stylesheet" href="./index.css">
   <script type="module" src="./index.js" defer></script>
 </head>
-<body class="bg-fixed bg-center bg-cover bg-[url('/images/background/backgroundImage1.jpg')] changing-bg">
-  <div>
-  <main class="navbar nav-visible w-screen flex flex-col justify-between z-10">
-    <div class="flex flex-col h-1/6 justify-between">
-        <nav class="flex border-b border-transparent justify-between h-24 px-4 bg-gray-300 bg-opacity-40">
-        <a href="/" class="flex items-center gap-5 ml-4">
-          <img class="logo h-14" src="images/logo/chillaxLetrasBlancas-edit.svg" alt="logo"  />
-        </a>
-        <ul class="flex text-2xl font-semibold text-black">
+<body class="bg-fixed h-screen bg-center bg-cover bg-[url('/images/background/backgroundImage1.jpg')]">
+  <div class="focus-window web-in-focus"></div>
+
+  <div class='menu menu-closed'>
+    <img class='close-menu-button h-5 self-end mr-3 mt-3 filter dark:invert' src="/images/icons/cancel.svg"
+      alt="close menu button" />
+    <ul class='p-4 '>
+      <li class='p-2 border-b border-gray-700 '><a href='https://app.mysweetdreams.es/login'>Catálogo</a></li>
+      <li class='p-2 border-b border-gray-700 '><a
+          href='https://app.mysweetdreams.es/signup'>Trending</a></li>
+      <li class='p-2 border-b border-gray-700 '><a href='https://app.mysweetdreams.es/who'>Quienes
+          somos</a></li>
+    </ul>
+    <div class="flex gap-5 px-6">
+      <a aria-label="Link to our instagram" href="https://www.instagram.com/mysweetdreamsapp/" target="_blank">
+        <img class="social filter dark:invert h-6 cursor-pointer hover:scale-105 duration-500 ease-in-out"
+          src="/images/icons/instagram.svg" alt="" />
+      </a>
+      <a aria-label="Link to our twitter" href="https://twitter.com/AppSweetDreams" target="_blank">
+        <img class="social filter dark:invert h-6 cursor-pointer hover:scale-105 duration-500 ease-in-out"
+          src="/images/icons/twitter.svg" alt="" />
+      </a>
+      <a aria-label="Link to our facebook" href="https://www.facebook.com/profile.php?id=100088317490253"
+        target="_blank">
+        <img class="social filter invert h-6 cursor-pointer hover:scale-105 duration-500 ease-in-out"
+          src="/images/icons/facebook.svg" alt="" />
+      </a>
+    </div>
+  </div>
+
+  <div class="flex flex-col h-screen justify-between">
+
+    <main class="navbar nav-visible w-screen flex flex-col justify-between z-10">
+      <nav
+        class="flex border-b border-transparent justify-between h-10 md:h-20 px-4 md:fixed md:w-screen md:bg-transparent bg-white">
+        <a class="flex items-center gap-5 ml-4" href="https://mysweetdreams.es">
+          <img class="logo h-[25px] md:h-[50px]" src="/images/logo/chillaxLetrasBlancas-edit.svg" alt="logo">
+        <img class="menu-button md:hidden cursor-pointer my-auto h-[30px] filter dark:invert" src="/images/icons/menu.svg"
+          alt="">
+        <ul class="hidden md:flex text-2xl text-shadow-1 font-semibold text-white">
           <li class="pr-3 pl-0 hover:text-web-boton duration-300 ease-in-out text-center flex items-center"><a
-              href="./construction/construction.html">Catálogo</a>
+              href='https://app.mysweetdreams.es/login'>Catálogo</a></li>
+          <li class="px-3 hover:text-web-boton duration-300 ease-in-out flex items-center"><a
+              href='https://app.mysweetdreams.es/signup'>Trending</a>
           </li>
           <li class="px-3 hover:text-web-boton duration-300 ease-in-out flex items-center"><a
-              href="./construction/construction.html">Trending</a>
-          </li>
-          <li class="px-3 hover:text-web-boton duration-300 ease-in-out flex items-center"><a
-              href="./construction/construction.html">Proyecto</a>
+              href='https://app.mysweetdreams.es/who'>Quienes somos</a>
           </li>
         </ul>
-        </nav>
-    </div>
+      </nav>
     </main>
-
-    <div class="text-shadow-2 text-white mt-32 mb-40 font-semibold px-14 h-3/4">
-      <p class="w-[600px] text-2xl">CHILLAX es tu aliada a la hora de combatir el aburrimiento.</p>
-      <p class="w-[600px] text-2xl">¡Explora ya entre miles y miles de posibilidades de entretenimiento!</p>
+    <div
+      class="text-shadow-1 mt-32 md:mt-48 text-white font-semibold font-quicksand px-3 sm:px-8 md:px-14 lg:px-16 xl:px-20 2xl:px-24">
+      <h2 class="text-2xl md:text-4xl lg:text-5xl">CHILLAX es tu aliad@ a la hora de combatir el aburrimiento.</h2>
+      <p class="sm:text-xl sm:w-[500px] md:w-[600px] xl:w-[900px] lg:text-2xl">¡Explora ya entre miles y miles de posibilidades de entretenimiento!</p>
     </div>
-
-    <div class="custom-shape-divider-bottom opacity-75">
+    <a aria-label="Link to our app" href='https://app.mysweetdreams.es/login'>
+      <button class="button-web mx-auto mt-5 sm:mx-10 md:mx-20 lg:mx-48">COMENZAR YA</button>
+    </a>
+    <div class="custom-shape-divider-bottom-1669113248 opacity-95">
       <img class="w-full h-14" src="/images/wavesOpacity.svg" alt="">
     </div>
-    <section id="info"
-      class="description-body h-auto flex flex-col justify-center bg-slate-300 opacity-95">
-      <div class="py-16 flex justify-around flex-wrap">
-        <article class="w-40 flex flex-col gap-4 mx-20 mb-10">
-          <img class="h-20 filter dark:invert" src="/icons/monitor-tv.svg" alt="" />
-          <strong class="text-2xl text-center font-bold break-words">Experiencia a medida</strong>
-          <p class="text-center text-gray-600 ">Nos adaptamos a cada usuario para proporcionar una
-            información única.</p>
-        </article>
-    
-        <article class="w-40 flex flex-col gap-4 mx-20 mb-10">
-          <img class="h-20 filter dark:invert" src="/icons/world.svg" alt="" />
-          <strong class="text-2xl text-center font-bold">Todo en uno</strong>
-          <p class="text-center text-gray-600 ">Desde nuestra aplicación podras obtener recomandaciones de series, películas, libros, juegos y más.</p>
-        </article>
-    
-        <article class="w-40 flex flex-col gap-4 mx-20 mb-10">
-          <img class="h-20 filter dark:invert" src="/icons/shield.svg" alt="" />
-          <strong class="text-2xl text-center font-bold">Segura y eficaz</strong>
-          <p class="text-center text-gray-600 ">Tus datos estan protegidos frente a terceros.</p>
-        </article>
-      </div>
-      <div class="flex justify-center">
-        <a aria-label="Link to our app" href='https://app.mysweetdreams.es/login'>
-          <button class="button-web mx-auto text-black ">COMENZAR YA</button>
+  </div>
+
+  <section id="info"
+    class="description-body h-auto flex flex-col justify-center bg-slate-300 opacity-95">
+    <div class="py-16 flex justify-around flex-wrap">
+      <article class="w-40 flex flex-col gap-4 mx-20 mb-10">
+        <img class="h-20 filter dark:invert" src="/images/icons/monitor-tv.svg" alt="" />
+        <strong class="text-2xl text-center font-bold break-words">Experiencia personalizada</strong>
+        <p class="text-center text-gray-600 ">Nos adaptamos a cada usuario para proporcionar una
+          información única</p>
+      </article>
+
+      <article class="w-40 flex flex-col gap-4 mx-20 mb-10">
+        <img class="h-20 filter dark:invert" src="/images/icons/world.svg" alt="" />
+        <strong class="text-2xl text-center font-bold">Todo en uno</strong>
+        <p class="text-center text-gray-600 ">Desde nuestra aplicación podras introducir, gestionar y
+          visualizar todos
+          tus
+          datos y recomendaciones</p>
+      </article>
+
+      <article class="w-40 flex flex-col gap-4 mx-20 mb-10">
+        <img class="h-20 filter dark:invert" src="/images/icons/shield.svg" alt="" />
+        <strong class="text-2xl text-center font-bold">Segura y eficaz</strong>
+        <p class="text-center text-gray-600 ">Tus datos estan protegidos frente a terceros</p>
+      </article>
+    </div>
+    <div class="flex justify-center">
+      <a aria-label="Link to our app" href='https://app.mysweetdreams.es/login'>
+        <button class="button-web mx-auto text-black ">COMENZAR YA</button>
+      </a>
+    </div>
+  </section>
+
+  <footer class="h-fit flex justify-end font-caveat bg-white ">
+    <div class="flex flex-wrap gap-3 lg:gap-8 items-center justify-center py-1 lg:py-3">
+      <p class="text-center text-xl lg:text-2xl">Contáctanos</p>
+      <div class="flex flex-row-reverse gap-4 px-5">
+        <a aria-label="Link to our instagram" href="https://www.instagram.com/mysweetdreamsapp/" target="_blank">
+          <img class="social filter black h-4 lg:h-8 cursor-pointer hover:scale-105 duration-500 ease-in-out"
+            src="/images/icons/instagram.svg" alt="Instagram" />
+        </a>
+        <a aria-label="Link to our twitter" href="https://twitter.com/AppSweetDreams" target="_blank">
+          <img class="social filter black h-4 lg:h-8 cursor-pointer hover:scale-105 duration-500 ease-in-out"
+            src="/images/icons/twitter.svg" alt="Twitter" />
+        </a>
+        <a aria-label="Link to our facebook" href="https://www.facebook.com/profile.php?id=100088317490253"
+          target="_blank">
+          <img class="social filter black h-4 lg:h-8 cursor-pointer hover:scale-105 duration-500 ease-in-out"
+            src="/images/icons/facebook.svg" alt="Facebook" />
         </a>
       </div>
-    </section>
-  <footer class="h-fit flex justify-center font-caveat bg-gray-700">
-    <p class="text-center">© CHILLAX 2023</p>
+
+    </div>
   </footer>
 </body>
 </html>
