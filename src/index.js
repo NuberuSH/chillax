@@ -1,37 +1,3 @@
-
-// const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
-// async function runLandingPage () {
-//   const main = document.getElementById('landingpage-main');
-//   const curtain = document.getElementById('curtain');
-//   const images = [
-//     'backgroundImage1.jpg',
-//     'backgroundImage2.jpg',
-//     'backgroundImage3.jpg',
-//     'backgroundImage4.webp',
-//     'backgroundImage5.jpg',
-//     'backgroundImage6.jpg',
-//     'backgroundImage7.jpg',
-//     'backgroundImage8.jpg',
-//     'backgroundImage9.webp',
-//     'backgroundImage10.jpg',
-//     'backgroundImage11.jpg'
-//   ];
-
-//   let position = Math.floor(Math.random() * images.length);
-
-//   while (true) {
-//     main.style.backgroundImage = `url("/images/background/${images[position]}")`;
-//     curtain.style.opacity = 0;
-//     position = position < images.length-1 ? position + 1 : 0;
-//     await sleep(8000);
-//     curtain.style.opacity = 1;
-//     await sleep(1200);
-//   }
-// }
-
-// await runLandingPage();
-
 const menu = document.querySelector(".menu");
 const focusWindow = document.querySelector(".focus-window");
 const menuButton = document.querySelector(".menu-button");
@@ -75,7 +41,7 @@ function setNavNotVisible() {
 function setDesktopNavBackground(scrollYPosition) {
   if (scrollYPosition > 0) {
     navbar.classList.remove("md:bg-transparent", "md:h-20");
-    navbar.classList.add("md:bg-gray-200", "md:dark:bg-web-formBgDarkMode", "md:border-gray-400");
+    navbar.classList.add("md:bg-web-button2", "md:border-gray-400", "opacity-95");
     // navTitle.classList.add("md:text-xl", "text-gray-900", "dark:text-gray-200");
     // navTitle.classList.remove("text-shadow-1", "lg:text-shadow-2");
     logo.classList.remove("md:h-[50px]");
@@ -172,3 +138,35 @@ window.addEventListener("scroll", function() {
   }
   lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
 }, false);
+
+// Dinamic background logic
+
+// const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms);
+// async function runLandingPage () {
+// const body = document.getElementsByClassName ('dinamic-bg');
+//   const curtain = document.getElementById('curtain');
+//     const images = [
+//         'backgroundImage1.jpg',
+//         'backgroundImage2.jpg',
+//         'backgroundImage3.jpg',
+//         'backgroundImage4.webp',
+//         'backgroundImage5.jpg',
+//         'backgroundImage6.jpg',
+//         'backgroundImage7.jpg',
+//         'backgroundImage8.jpg',
+//         'backgroundImage9.webp',
+//         'backgroundImage10.jpg',
+//         'backgroundImage11.jpg'
+//     ];
+//     let position = Math.floor(Math.random() * images.length;
+//   while (true) {
+//     body.style.backgroundImage = `url("/images/background/${images[position]}")`;
+//     curtain.style.opacity = 0;
+//     position = position < images.length-1 ? position + 1 : 0;
+//     await sleep(8000);
+//     curtain.style.opacity = 1;
+//     await sleep(1200);
+//   }
+// };
+
+//  await runLandingPage();

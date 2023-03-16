@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       colors: {
         web: {
-          boton: "#8b3030",
+          boton: "#787878",
           boton2: "#510d0d",
           fondo: "#C9D5E0",
           topBar: "#4FA9A9",

@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description"
+    content="¿Alguna vez te has sentido aburrid@ en casa sin saber qué hacer? Chillax te ayuda en esos momentos para que disfrutes de tu tiempo libre lo máximo posible. ¡Únete ya!">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chillax</title>
   <link rel="icon" href="images/logo/logopnyo.svg" type="image/x-icon">
   <link rel="stylesheet" href="./index.css">
   <script type="module" src="./index.js" defer></script>
 </head>
-<body class="bg-fixed h-screen bg-center bg-cover bg-[url('/images/background/backgroundImage1.jpg')]">
+<body class="dinamic-bg font-robotoslab bg-fixed h-screen bg-center bg-cover bg-[url('/images/background/backgroundImage1.jpg')]">
   <div class="focus-window web-in-focus"></div>
 
   <div class='menu menu-closed'>
@@ -43,10 +45,11 @@
 
     <main class="navbar nav-visible w-screen flex flex-col justify-between z-10">
       <nav
-        class="flex border-b border-transparent justify-between h-10 md:h-20 px-4 md:fixed md:w-screen md:bg-transparent bg-white">
+        class="flex border-b border-transparent justify-between h-10 md:h-20 px-4 md:fixed md:w-screen md:bg-transparent bg-web-boton2">
         <a class="flex items-center gap-5 ml-4" href="https://mysweetdreams.es">
-          <img class="logo h-[25px] md:h-[50px]" src="/images/logo/chillaxLetrasBlancas-edit.svg" alt="logo">
-        <img class="menu-button md:hidden cursor-pointer my-auto h-[30px] filter dark:invert" src="/images/icons/menu.svg"
+          <img class="logo h-[40px] md:h-[50px]" src="/images/logo/chillaxSombras.svg" alt="logo">
+        </a>
+        <img class="menu-button md:hidden cursor-pointer my-auto h-[30px] filter invert" src="/images/icons/menu.svg"
           alt="">
         <ul class="hidden md:flex text-2xl text-shadow-1 font-semibold text-white">
           <li class="pr-3 pl-0 hover:text-web-boton duration-300 ease-in-out text-center flex items-center"><a
@@ -61,12 +64,12 @@
       </nav>
     </main>
     <div
-      class="text-shadow-1 mt-32 md:mt-48 text-white font-semibold font-quicksand px-3 sm:px-8 md:px-14 lg:px-16 xl:px-20 2xl:px-24">
+      class="text-shadow-1 mt-32 md:mt-48 text-white font-semibold font-robotoslab px-3 sm:px-8 md:px-14 lg:px-16 xl:px-20 2xl:px-24 max-w-4xl">
       <h2 class="text-2xl md:text-4xl lg:text-5xl">CHILLAX es tu aliad@ a la hora de combatir el aburrimiento.</h2>
       <p class="sm:text-xl sm:w-[500px] md:w-[600px] xl:w-[900px] lg:text-2xl">¡Explora ya entre miles y miles de posibilidades de entretenimiento!</p>
     </div>
     <a aria-label="Link to our app" href='https://app.mysweetdreams.es/login'>
-      <button class="button-web mx-auto mt-5 sm:mx-10 md:mx-20 lg:mx-48">COMENZAR YA</button>
+      <button class="button-web mx-[10%] mt-5 sm:mx-10 md:mx-20 lg:mx-48">COMENZAR YA</button>
     </a>
     <div class="custom-shape-divider-bottom-1669113248 opacity-95">
       <img class="w-full h-14" src="/images/wavesOpacity.svg" alt="">
@@ -78,9 +81,9 @@
     <div class="py-16 flex justify-around flex-wrap">
       <article class="w-40 flex flex-col gap-4 mx-20 mb-10">
         <img class="h-20 filter dark:invert" src="/images/icons/monitor-tv.svg" alt="" />
-        <strong class="text-2xl text-center font-bold break-words">Experiencia personalizada</strong>
-        <p class="text-center text-gray-600 ">Nos adaptamos a cada usuario para proporcionar una
-          información única</p>
+        <strong class="text-2xl text-center font-bold break-words">Experiencia única</strong>
+        <p class="text-center text-gray-600 ">Nos adaptamos a cada usuario para proporcionar
+          información personalizada</p>
       </article>
 
       <article class="w-40 flex flex-col gap-4 mx-20 mb-10">
@@ -105,21 +108,21 @@
     </div>
   </section>
 
-  <footer class="h-fit flex justify-end font-caveat bg-white ">
+  <footer class="h-fit flex justify-end font-robotoslab bg-white ">
     <div class="flex flex-wrap gap-3 lg:gap-8 items-center justify-center py-1 lg:py-3">
       <p class="text-center text-xl lg:text-2xl">Contáctanos</p>
       <div class="flex flex-row-reverse gap-4 px-5">
         <a aria-label="Link to our instagram" href="https://www.instagram.com/mysweetdreamsapp/" target="_blank">
-          <img class="social filter black h-4 lg:h-8 cursor-pointer hover:scale-105 duration-500 ease-in-out"
+          <img class="social filter black h-8 lg:h-8 cursor-pointer hover:scale-105 duration-500 ease-in-out"
             src="/images/icons/instagram.svg" alt="Instagram" />
         </a>
         <a aria-label="Link to our twitter" href="https://twitter.com/AppSweetDreams" target="_blank">
-          <img class="social filter black h-4 lg:h-8 cursor-pointer hover:scale-105 duration-500 ease-in-out"
+          <img class="social filter black h-8 lg:h-8 cursor-pointer hover:scale-105 duration-500 ease-in-out"
             src="/images/icons/twitter.svg" alt="Twitter" />
         </a>
         <a aria-label="Link to our facebook" href="https://www.facebook.com/profile.php?id=100088317490253"
           target="_blank">
-          <img class="social filter black h-4 lg:h-8 cursor-pointer hover:scale-105 duration-500 ease-in-out"
+          <img class="social filter black h-8 lg:h-8 cursor-pointer hover:scale-105 duration-500 ease-in-out"
             src="/images/icons/facebook.svg" alt="Facebook" />
         </a>
       </div>
