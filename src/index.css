@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: RobotoSlab;
+  font-weight: 700;
+  src: url("../fonts/RobotoSlab.ttf");
+}
+
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -27,9 +33,16 @@ body {
 }
 
 /*
-  Typographic tweaks!
-  4. Add accessible line-height
-  5. Improve text rendering
+  4. Typographic tweaks! Set font for entire page
+*/
+/* stylelint-disable-next-line no-duplicate-selectors */
+* {
+  font-family: RobotoSlab;
+  font-weight: 700;
+}
+
+/*
+  5. Typographic tweaks! Improve text rendering
 */
 body {
   line-height: 1.5;
@@ -79,11 +92,6 @@ h6 {
   isolation: isolate;
 }
 
-@font-face {
-  font-family: bluetea;
-  src: url("../fonts/Nunito.ttf");
-}
-
 .text-shadow-2 {
   text-shadow:
     -2px 2px 0 #000,
@@ -109,26 +117,9 @@ h6 {
   transform: rotate(180deg);
 }
 
-@font-face {
-  font-family: bluetea;
-  src: url("../fonts/Bluetea.ttf");
-}
-
-@font-face {
-  font-family: Quicksand;
-  font-weight: 400;
-  src: url("../fonts/Quicksand.ttf");
-}
-
-@font-face {
-  font-family: Caveat;
-  font-weight: 600;
-  src: url("../fonts/Caveat.ttf");
-}
-
 @layer components {
   .button-web {
-    @apply font-quicksand font-bold w-fit px-4 sm:px-10 py-2 text-lg sm:text-2xl bg-web-boton hover:bg-web-boton2 hover:text-white rounded-2xl sm:rounded-full mb-10 shadow-lg duration-500 ease-in-out hover:resize hover:ring-2 ring-offset-4 hover:scale-105 ring-web-boton;
+    @apply font-RobotoSlab font-bold w-fit px-4 sm:px-10 py-2 text-lg sm:text-2xl bg-web-boton hover:bg-web-boton2 hover:text-white rounded-2xl sm:rounded-full mb-10 shadow-lg duration-500 ease-in-out hover:resize hover:ring-2 ring-offset-4 hover:scale-105 ring-web-boton;
   }
 
   .web-out-of-focus {
