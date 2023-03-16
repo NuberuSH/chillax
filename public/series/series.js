@@ -158,8 +158,6 @@ function returnToList() {
   <option value="0">Selecciona un género</option>
   <option value="0">Todos</option>
   </select>
-  <input id="search" type="text" placeholder="Busca una serie">
-  <button onclick="searchSerie()">Buscar</button>
   <h1>Series</h1>
   <hr>
   <div id="series-list">
