@@ -191,7 +191,7 @@ function returnToList() {
   <hr>
   <div id="movie-list">
   </div>
-  <div id="show-more" onclick="showMore()">Mostrar más</div>`;
+  <div class="show-more" onclick="showMore()">Mostrar más</div>`;
   // getGenres();
   getMovieList();
 }

@@ -166,7 +166,7 @@ function returnToList() {
   <div id="series-list">
 
   </div>
-  <div id="show-more" onclick="showMore()">Mostrar más</div>`;
+  <div class="show-more" onclick="showMore()">Mostrar más</div>`;
   // getGenres();
   getSeriesList();
 }
