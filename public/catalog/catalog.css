@@ -15,6 +15,338 @@ body {
   background-color: #444;
 }
 
+/* parte pelis */
+
+.movie-info-container {
+  width: 95%;
+  margin: auto;
+  border: 2px solid rgb(56 55 55);
+  border-radius: 15px;
+  background-color: #4e4e4e;
+  color: white;
+  box-shadow:
+    inset 0 0 3em 3em rgb(5 0 0 / 26%),
+    0 0 20px rgb(29 29 29 / 60.5%),
+    1em 1em 10em rgb(255 255 255 / 29.9%);
+  display: flex;
+  flex-direction: column;
+}
+
+#container-select{
+  display: flex;
+  flex-direction: row;
+}
+
+hr {
+  width: 90%;
+}
+
+.additional-info {
+  align-self: flex-end;
+  width: 400px;
+  height: max-content;
+}
+
+.sinopsis {
+  width: 400px;
+  align-self: flex-end;
+  margin-top: 10%;
+  line-height: 230%;
+}
+
+#info-body {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+  align-self:center;
+  width: 40%;
+}
+
+.small-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10%;
+  align-self: center;
+}
+
+#movie-poster {
+  margin-top: 3%;
+  width: 35%;
+  border-radius: 10px 10px;
+
+}
+
+#movie-title {
+  text-align: center;
+  margin: 0;
+}
+
+.go-back {
+  font-size: x-large;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 7px;
+  width:fit-content;
+  padding: 0.5%;
+  box-shadow:
+    inset 0 0 3em 3em rgb(5 0 0 / 26%),
+    0 0 20px rgb(29 29 29 / 60.5%),
+    1em 1em 10em rgb(255 255 255 / 29.9%);
+    margin-left: 3%;
+    margin-top: 3%;
+}
+
+@media (min-width: 900px) {
+  #movie-poster{
+    margin: 3%;
+  }
+}
+
+@media (max-width: 899px) {
+  .movie-info-container {
+    max-width: 899px;
+    flex-direction: column;
+  }
+  .small-container {
+    flex-direction: column;
+    margin: auto;
+  }
+  #movie-poster{
+    align-self: center;
+    width: 60%;
+  }
+  #info-body{
+    text-align: center;
+    margin: 4% auto;
+    align-self: center;
+  }
+  .additional-info{
+    align-self: center;
+  }
+  .sinopsis{
+    align-self: center;
+  }
+  #movie-list,
+  #series-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  #genre-filter {
+    margin-left: 48%;
+    margin-bottom: 5.5%;
+    font-size: large;
+    width: fit-content;
+  }
+  .section-title{
+    margin-left: 3%
+  }
+}
+
+@media (max-width: 599px) {
+  .movie-info-container {
+    max-width: 599px;
+    flex-direction: column;
+  }
+  .small-container {
+    flex-direction: column;
+    margin: auto;
+  }
+  #movie-poster{
+    align-self: center;
+    width: 60%;
+  }
+  #info-body{
+    text-align: center;
+    margin: 4% auto;
+    align-self: center;
+  }
+  .additional-info{
+    align-self: center;
+  }
+  .sinopsis{
+    align-self: center;
+  }
+  #movie-list,
+  #series-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  #genre-filter {
+    margin-left: 25%;
+    margin-bottom: 7%;
+  }
+}
+
+/* fin parte pelis */
+/* parte series */
+
+.serie-info-container {
+  width: 95%;
+  margin: auto;
+  /*margin-bottom: 25px;-*/
+
+  border: 2px solid rgb(56 55 55);
+  border-radius: 15px;
+  background-color: #4e4e4e;
+  color: white;
+  box-shadow:
+    inset 0 0 3em 3em rgb(5 0 0 / 26%),
+    0 0 20px rgb(29 29 29 / 60.5%),
+    1em 1em 10em rgb(255 255 255 / 29.9%);
+  display: flex;
+  flex-direction: column;
+}
+
+#container-select{
+  display: flex;
+  flex-direction: row;
+}
+
+hr {
+  width: 90%;
+}
+
+.additional-info {
+  align-self: flex-end;
+  width: 400px;
+  height: max-content;
+}
+
+.sinopsis {
+  width: 400px;
+  align-self: flex-end;
+  margin-top: 10%;
+  line-height: 230%;
+}
+
+#info-body {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+  align-self:center;
+  width: 40%;
+}
+
+.small-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10%;
+  align-self: center;
+}
+
+#serie-poster {
+  margin-top: 3%;
+  width: 35%;
+  border-radius: 10px 10px 0 0;
+
+}
+
+#serie-title {
+  text-align: center;
+  margin:0;
+}
+
+.go-back {
+  font-size: x-large;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 7px;
+  width:fit-content;
+  padding: 0.5%;
+  box-shadow:
+    inset 0 0 3em 3em rgb(5 0 0 / 26%),
+    0 0 20px rgb(29 29 29 / 60.5%),
+    1em 1em 10em rgb(255 255 255 / 29.9%);
+    margin-left: 3%;
+    margin-top: 3%;
+}
+
+@media (min-width: 900px) {
+  #serie-poster{
+    margin: 3%;
+  }
+
+  .serie-info-container {
+    min-height: 720px;
+  }
+}
+
+@media (max-width: 899px) {
+  .serie-info-container {
+    max-width: 899px;
+    flex-direction: column;
+  }
+
+  .small-container {
+    flex-direction: column;
+    margin: auto;
+  }
+
+  #serie-poster{
+    align-self: center;
+    width: 60%;
+  }
+
+  #info-body{
+    text-align: center;
+    margin: 4% auto;
+    align-self: center;
+  }
+
+  .additional-info{
+    align-self: center;
+  }
+  .sinopsis{
+    align-self: center;
+  }
+  #serie-list,
+  #series-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  #genre-filter {
+    margin-left: 48%;
+    margin-bottom: 5.5%;
+    font-size: large;
+    width: fit-content;
+  }
+  .section-title{
+    margin-left: 3%
+  }
+}
+
+@media (max-width: 599px) {
+  .serie-info-container {
+    max-width: 599px;
+    flex-direction: column;
+  }
+  .small-container {
+    flex-direction: column;
+    margin: auto;
+  }
+  #serie-poster{
+    align-self: center;
+    width: 60%;
+  }
+  #info-body{
+    text-align: center;
+    margin: 4% auto;
+    align-self: center;
+  }
+  .additional-info{
+    align-self: center;
+  }
+  .sinopsis{
+    align-self: center;
+  }
+  #serie-list,
+  #series-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  #genre-filter {
+    margin-left: 25%;
+    margin-bottom: 7%;
+  }
+}
+ /* fin parte series*/
+
 #container {
   max-width: 1280px;
   width: 100%;
