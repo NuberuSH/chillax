@@ -178,6 +178,7 @@ function showMovieInfo(idMovie) {
 function returnToList() {
   page = 1;
   let container = document.getElementById("container");
+  container.className = "";
   container.innerHTML = `
   <div id="container-select">
     <h2 class="section-title">Películas</h2>
