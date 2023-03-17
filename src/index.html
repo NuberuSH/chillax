@@ -3,35 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="¿Alguna vez te has sentido aburrid@ en casa sin saber qué hacer? Chillax te ayuda en esos momentos para que disfrutes de tu tiempo libre lo máximo posible. ¡Únete ya!">
+  <meta name="description"
+    content="¿Alguna vez te has sentido aburrid@ en casa sin saber qué hacer? Chillax te ayuda en esos momentos para que disfrutes de tu tiempo libre lo máximo posible. ¡Únete ya!">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing | Chillax</title>
-  <link rel="icon" href="/images/logo/favicon.svg" />
-  <link rel="stylesheet" href="/index.css">
-  <script type="module" src="/index.js" defer></script>
+  <title>Chillax</title>
+  <link rel="icon" href="images/logo/logopnyo.svg" type="image/x-icon">
+  <link rel="stylesheet" href="./index.css">
+  <script type="module" src="./index.js" defer></script>
 </head>
-<body>
-  <main id="landingpage-main">
-    <div id="main-visible">
-      <header>
-        <a href="/" class="header-nav-a">
-          <img src="/images/logo/chillaxSombras.svg" alt="logo" id="logo-nav-bar" />
-        </a>
-        <nav>
-          <a class="header-nav-a" href="/catalog/catalog.html">Catálogo</a>
-          <a class="header-nav-a" href="/construction/construction.html">Trending</a>
-          <a class="header-nav-a" href="/construction/construction.html">Proyecto</a>
-        </nav>
-      </header>
-      <section>
-        <p>CHILLAX es tu aliad@ a la hora de combatir el aburrimiento.</p>
-        <p>¡Explora ya entre miles y miles de posibilidades de entretenimiento!</p>
-      </section>
+<body class="dinamic-bg font-robotoslab bg-fixed h-screen bg-center bg-cover bg-[url('/images/background/backgroundImage1.webp')]">
+  <div class="focus-window web-in-focus"></div>
+
+  <div class='menu menu-closed'>
+    <img class='close-menu-button h-5 self-end mr-3 mt-3 filter dark:invert' src="/images/icons/cancel.svg"
+      alt="close menu button" />
+    <ul class='p-4 '>
+      <li class='p-2 border-b border-gray-700 '><a href='/catalog/catalog.html'>Catálogo</a></li>
+      <li class='p-2 border-b border-gray-700 '><a
+          href='/construction/construction.html'>Trending</a></li>
+      <li class='p-2 border-b border-gray-700 '><a href='/construction/construction.html'>Quienes
+          somos</a></li>
+    </ul>
+    <div class="flex gap-5 px-6">
+      <a aria-label="Link to our instagram" href="https://www.instagram.com/chillax.today/" target="_blank">
+        <img class="social filter dark:invert h-6 cursor-pointer hover:scale-105 duration-500 ease-in-out"
+          src="/images/icons/instagram.svg" alt="" />
+      </a>
+      <a aria-label="Link to our twitter" href="https://twitter.com/chillax_today" target="_blank">
+        <img class="social filter dark:invert h-6 cursor-pointer hover:scale-105 duration-500 ease-in-out"
+          src="/images/icons/twitter.svg" alt="" />
+      </a>
+      <a aria-label="Link to our facebook" href="https://www.facebook.com/profile.php?id=100091128542122"
+        target="_blank">
+        <img class="social filter invert h-6 cursor-pointer hover:scale-105 duration-500 ease-in-out"
+          src="/images/icons/facebook.svg" alt="" />
+      </a>
     </div>
-    <div id="curtain"></div>
-  </main>
-  <footer>
-    <p>© CHILLAX 2023</p>
+  </div>
+
+  <div class="flex flex-col h-screen justify-between">
+
+    <main class="navbar nav-visible w-screen flex flex-col justify-between z-10">
+      <nav
+        class="flex border-b border-transparent justify-between h-10 md:h-20 px-4 md:fixed md:w-screen md:bg-transparent bg-web-boton2">
+        <a class="flex items-center gap-5 ml-4" href="https://chillax.today">
+          <img class="logo h-[40px] md:h-[70px]" src="/images/logo/chillaxSombras.svg" alt="logo">
+        </a>
+        <img class="menu-button md:hidden cursor-pointer my-auto h-[30px] filter invert" src="/images/icons/menu.svg"
+          alt="">
+        <ul class="hidden md:flex text-2xl text-shadow-1 font-semibold text-white">
+          <li class="pr-3 pl-0 hover:text-web-boton duration-300 ease-in-out text-center flex items-center"><a
+              href='/catalog/catalog.html'>Catálogo</a></li>
+          <li class="px-3 hover:text-web-boton duration-300 ease-in-out flex items-center"><a
+              href='/construction/construction.html'>Trending</a>
+          </li>
+          <li class="px-3 hover:text-web-boton duration-300 ease-in-out flex items-center"><a
+              href='/construction/construction.html'>Quienes somos</a>
+          </li>
+        </ul>
+      </nav>
+    </main>
+    <div
+      class="text-shadow-1 mt-32 md:mt-48 text-white font-semibold font-robotoslab px-3 sm:px-8 md:px-14 lg:px-16 xl:px-20 2xl:px-24 max-w-4xl">
+      <h2 class="text-2xl md:text-4xl lg:text-5xl">CHILLAX es tu aliada a la hora de combatir el aburrimiento.</h2>
+      <p class="sm:text-xl sm:w-[500px] md:w-[600px] xl:w-[900px] lg:text-2xl">¡Explora ya entre miles y miles de posibilidades de entretenimiento!</p>
+    </div>
+    <a aria-label="Link to our app" href='/catalog/catalog.html'>
+      <button class="button-web mx-[10%] mt-5 sm:mx-10 md:mx-20 lg:mx-48">COMENZAR YA</button>
+    </a>
+    <div class="custom-shape-divider-bottom-1669113248 opacity-95">
+      <img class="w-full h-14" src="/images/wavesOpacity.svg" alt="">
+    </div>
+  </div>
+
+  <section id="info"
+    class="description-body h-auto flex flex-col justify-center bg-slate-300 opacity-95">
+    <div class="py-16 flex justify-around flex-wrap">
+      <article class="w-40 flex flex-col gap-4 mx-20 mb-10">
+        <img class="h-20 filter dark:invert" src="/images/icons/monitor-tv.svg" alt="" />
+        <strong class="text-2xl text-center font-bold break-words">Experiencia única</strong>
+        <p class="text-center text-gray-600 ">Nos adaptamos a cada usuario para proporcionar
+          información personalizada</p>
+      </article>
+
+      <article class="w-40 flex flex-col gap-4 mx-20 mb-10">
+        <img class="h-20 filter dark:invert" src="/images/icons/world.svg" alt="" />
+        <strong class="text-2xl text-center font-bold">Todo en uno</strong>
+        <p class="text-center text-gray-600 ">Desde nuestra aplicación podras introducir, gestionar y
+          visualizar todos
+          tus
+          datos y recomendaciones</p>
+      </article>
+
+      <article class="w-40 flex flex-col gap-4 mx-20 mb-10">
+        <img class="h-20 filter dark:invert" src="/images/icons/shield.svg" alt="" />
+        <strong class="text-2xl text-center font-bold">Segura y eficaz</strong>
+        <p class="text-center text-gray-600 ">Tus datos estan protegidos frente a terceros</p>
+      </article>
+    </div>
+    <div class="flex justify-center">
+      <a aria-label="Link to our app" href='/catalog/catalog.html'>
+        <button class="button-web mx-auto text-black ">COMENZAR YA</button>
+      </a>
+    </div>
+  </section>
+
+  <footer class="h-fit flex justify-end font-robotoslab bg-white ">
+    <div class="flex flex-wrap gap-3 lg:gap-8 items-center justify-center py-1 lg:py-3">
+      <p class="text-center text-xl lg:text-2xl">Contáctanos</p>
+      <div class="flex flex-row-reverse gap-4 px-5">
+        <a aria-label="Link to our instagram" href="https://www.instagram.com/chillax.today/" target="_blank">
+          <img class="social filter black h-8 lg:h-8 cursor-pointer hover:scale-105 duration-500 ease-in-out"
+            src="/images/icons/instagram.svg" alt="Instagram" />
+        </a>
+        <a aria-label="Link to our twitter" href="https://twitter.com/chillax_today" target="_blank">
+          <img class="social filter black h-8 lg:h-8 cursor-pointer hover:scale-105 duration-500 ease-in-out"
+            src="/images/icons/twitter.svg" alt="Twitter" />
+        </a>
+        <a aria-label="Link to our facebook" href="https://www.facebook.com/profile.php?id=100091128542122"
+          target="_blank">
+          <img class="social filter black h-8 lg:h-8 cursor-pointer hover:scale-105 duration-500 ease-in-out"
+            src="/images/icons/facebook.svg" alt="Facebook" />
+        </a>
+      </div>
+
+    </div>
   </footer>
 </body>
 </html>

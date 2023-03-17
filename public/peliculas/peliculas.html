@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHILLAX</title>
+  <link rel="icon" href="/images/logo/favicon.svg" />
+  <link rel="stylesheet" href="./peliculas.css">
+  <script defer src="./peliculas.js"></script>
+</head>
+<body>
+  <header>
+    <a href="/" class="header-nav-a">
+      <img src="/images/logo/chillaxSombras.svg" alt="logo" id="logo-nav-bar" />
+    </a>
+    <a href="/catalog/catalog.html" class="header-nav-a">
+      <img src="/images/icons/arrow-back.svg" alt="logo" id="icon-back" />
+    </a>
+    </header>
+
+  <div id="container">
+    <div id="container-select">
+      
+    <h2 class="section-title">Películas</h2>
+    <select name="Filtro por género" id="genre-filter" onchange="genreFilter()">
+      <option value="0">Selecciona un género</option>
+      <option value="0">Todos</option>
+    </select>
+    </div>
+    <hr>
+    <div id="movie-list">
+
+    </div>
+    <!-- <div id="previous" onclick="previousPage()">Página anterior</div> -->
+    <div class="show-more" onclick="showMore()">Mostrar más</div>
+  </div>
+  
+</body>
+</html>
