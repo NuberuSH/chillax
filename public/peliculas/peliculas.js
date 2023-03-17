@@ -182,7 +182,7 @@ function returnToList() {
   <option value="0">Selecciona un género</option>
   <option value="0">Todos</option>
   </select>
-  <h1>Películas</h1>
+  <h2 class="section-title">Películas</h2>
   <hr>
   <div id="movie-list">
   </div>
