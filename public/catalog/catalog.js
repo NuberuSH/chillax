@@ -12,7 +12,7 @@ function getMovies() {
     return response.json();
   })
   .then(data => {//Recibimos la respuesta de la api (data) y recorremos la lista que contiene (results) para mostrar las películas en el html
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
       let divMovie = document.createElement("div");
       divMovie.className = "movie";
       divMovie.id = data.results[i].id;
@@ -43,7 +43,7 @@ function getSeries() {
     return response.json();
   })
   .then(data => {//Recibimos la respuesta de la api (data) y recorremos la lista que contiene (results) para mostrar las películas en el html
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
       let divSerie = document.createElement("div");
       divSerie.className = "serie";
       divSerie.id = data.results[i].id;
@@ -52,7 +52,7 @@ function getSeries() {
       img.src = `https://image.tmdb.org/t/p/w500${data.results[i].poster_path}`;
       img.alt = data.results[i].title;
       let divSerieFooter = document.createElement("div");
-      divSerieFooter.className = "movie-footer";
+      divSerieFooter.className = "serie-footer";
       let footerTitle = document.createElement("div");
       footerTitle.className = "title";
       footerTitle.innerText = data.results[i].original_name;
@@ -68,9 +68,9 @@ function getSeries() {
 }
 
 function redirectToMovies() {
-  location.href = "../peliculas.html";
+  location.href = "/peliculas/peliculas.html";
 }
 
 function redirectToSeries() {
-  location.href = "../series.html";
+  location.href = "/series/series.html";
 }

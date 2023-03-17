@@ -1,11 +1,6 @@
 @import "https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto+Slab:wght@100&display=swap";
 @import "/palette.css";
 
-@font-face {
-    font-family: 'Cavalier Bold';
-    src: url('../fonts/Cavalier-Bold.ttf') format('truetype');
-}
-
 html {
   font-family:
     "Dancing Script", /* esta no se esta aplicando por la de abajo */
@@ -52,10 +47,10 @@ nav {
 
 .section-title {
   max-width: fit-content;
-  color: #CCC;
-  font: 3rem 'Cavalier Bold';
+  color: #ccc;
+  font: 3rem "Cavalier Bold";
   background-color: #333;
-  padding: 13px 10px 5px 10px;
+  padding: 13px 10px 5px;
   border: 3px solid #222;
   border-radius: 5px;
 }
@@ -69,31 +64,42 @@ nav {
 }
 
 .filter-label {
-  color: #CCC;
+  color: #ccc;
 }
 
 #movie-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
+  margin-top: 25px;
+  font-weight: bolder;
+}
+
+#series-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 30px;
   margin-top: 25px;
   font-weight: bolder;
 }
 
 @media (max-width: 899px) {
-  #movie-list {
+  #movie-list,
+  #series-list {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 @media (max-width: 599px) {
-  #movie-list {
+  #movie-list,
+  #series-list {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-.movie {
-  color: #AAA;
+.movie,
+.serie {
+  color: #aaa;
   box-shadow: 0 0 22px 1px rgb(0 0 0 / 10%);
   background-color: var(--bg-color);
   border-radius: 10px;
@@ -101,8 +107,9 @@ nav {
   font-size: 1rem;
 }
 
-.movie:hover {
-  color: #FFF;
+.movie:hover,
+.serie:hover {
+  color: #fff;
   box-shadow: 0 0 22px 3px rgb(0 0 0 / 25%);
   transition: 0.25s all;
   transform: scale(1.1);
@@ -115,7 +122,8 @@ nav {
   border-radius: 10px 10px 0 0;
 }
 
-.movie-footer {
+.movie-footer,
+.serie-footer {
   margin: 5px 0;
   padding: 5px;
   display: flex;
@@ -138,9 +146,9 @@ nav {
   max-width: 60%;
   margin: 30px 0;
   background-color: darkred;
-  color: #CCC;
+  color: #ccc;
   font-weight: 700;
-  border: 2px solid #CCC;
+  border: 2px solid #ccc;
   border-radius: 5px;
   padding: 10px;
   transition: 0.5s all;
@@ -148,7 +156,7 @@ nav {
 
 #show-more:hover {
   cursor: pointer;
-  color: #FFF;
+  color: #fff;
   background-color: #f37373;
   transform: scale(1.04);
 }

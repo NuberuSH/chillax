@@ -207,11 +207,11 @@ function returnToList() {
 function showMore() {
   page++;
   let searchValue = document.getElementById("search");
-  if (searchValue.value !== "") {
-    searchMovie();
-  } else {
+  // if (searchValue.value !== "") {
+  //   searchMovie();
+  // } else {
     getMovieList();
-  }
+  // }
 }
 
 //Esta función disminuye en 1 el valor de page, realizando una petición a la página anterior de la api

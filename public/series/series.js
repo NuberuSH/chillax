@@ -185,11 +185,11 @@ function returnToList() {
 function showMore() {
   page++;
   const searchValue = document.getElementById("search");
-  if (searchValue.value !== "") {
-    searchSerie();
-  } else {
+  // if (searchValue.value !== "") {
+  //   searchSerie();
+  // } else {
     getSeriesList();
-  }
+  // }
 }
 
 // Esta función disminuye en 1 el valor de page, realizando una petición a la página anterior de la api
