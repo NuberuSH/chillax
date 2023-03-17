@@ -158,7 +158,7 @@ function returnToList() {
   <option value="0">Selecciona un género</option>
   <option value="0">Todos</option>
   </select>
-  <h1>Series</h1>
+  <h2 class="section-title">Series</h2>
   <hr>
   <div id="series-list">
 
