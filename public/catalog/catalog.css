@@ -50,7 +50,7 @@ nav {
   color: #ccc;
   font: 3rem "Cavalier Bold";
   background-color: #333;
-  padding: 13px 10px 5px;
+  padding: 0.5%;
   border: 3px solid #222;
   border-radius: 5px;
 }
@@ -141,14 +141,14 @@ nav {
   justify-content: center;
 }
 
-#show-more {
+.show-more {
   min-width: fit-content;
-  max-width: 60%;
+  max-width: fit-content;
   margin: 30px 0;
-  background-color: darkred;
+  background-color: #333;
   color: #ccc;
   font-weight: 700;
-  border: 2px solid #ccc;
+  border: 2px solid #000000;
   border-radius: 5px;
   padding: 10px;
   transition: 0.5s all;
