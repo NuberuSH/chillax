@@ -121,7 +121,7 @@ window.onload = getMovieList;
 function showMovieInfo(idMovie) {
   let container = document.getElementById("container");
   container.className = "movie-info-container";
-  container.innerHTML = "<div class='go-back' onclick='returnToList();'>Películas\n</div><h1 id='movie-title'></h1>\n<hr>";
+  container.innerHTML = "<div class='go-back' onclick='returnToList();'>Volver atrás\n</div><h1 id='movie-title'></h1>\n<hr>";
   let movieTitle = document.getElementById("movie-title");
   let smallContainer = document.createElement("div");
   smallContainer.className = "small-container";
@@ -147,7 +147,7 @@ function showMovieInfo(idMovie) {
     let runtime = document.createElement("p");
     runtime.className = "runtime";
     if (data.runtime > 0) {
-      runtime.innerText = `Duración aproximada episodio: ${data.runtime} minutos`;
+      runtime.innerText = `Duración aproximada: ${data.runtime} minutos`;
     }
     additionalInfo.appendChild(runtime);
     let genres = document.createElement("p");
@@ -178,15 +178,20 @@ function showMovieInfo(idMovie) {
 function returnToList() {
   page = 1;
   let container = document.getElementById("container");
-  container.innerHTML = `<select name="Filtro por género" id="genre-filter" onchange="genreFilter()">
-  <option value="0">Selecciona un género</option>
-  <option value="0">Todos</option>
-  </select>
-  <h1>Películas</h1>
+  container.className = "";
+  container.innerHTML = `
+  <div id="container-select">
+    <h2 class="section-title">Películas</h2>
+    <select name="Filtro por género" id="genre-filter" onchange="genreFilter()">
+      <option value="0">Selecciona un género</option>
+      <option value="0">Todos</option>
+    </select>
+  </div>
+  
   <hr>
   <div id="movie-list">
   </div>
-  <div id="show-more" onclick="showMore()">Mostrar más</div>`;
+  <div class="show-more" onclick="showMore()">Mostrar más</div>`;
   // getGenres();
   getMovieList();
 }
@@ -207,11 +212,11 @@ function returnToList() {
 function showMore() {
   page++;
   let searchValue = document.getElementById("search");
-  if (searchValue.value !== "") {
-    searchMovie();
-  } else {
+  // if (searchValue.value !== "") {
+  //   searchMovie();
+  // } else {
     getMovieList();
-  }
+  // }
 }
 
 //Esta función disminuye en 1 el valor de page, realizando una petición a la página anterior de la api

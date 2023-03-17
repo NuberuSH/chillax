@@ -96,7 +96,7 @@ window.onload = getSeriesList;
 function showSerieInfo(idSerie) {
   const container = document.getElementById("container");
   container.className = "serie-info-container";
-  container.innerHTML = "<div class='go-back' onclick='returnToList();'>Series\n</div><h1 id='serie-title'></h1>\n<hr>";
+  container.innerHTML = "<div class='go-back' onclick='returnToList();'>Volver atrás\n</div><h1 id='serie-title'></h1>\n<hr>";
   const serieTitle = document.getElementById("serie-title");
   const smallContainer = document.createElement("div");
   smallContainer.className = "small-container";
@@ -154,16 +154,19 @@ function returnToList() {
   page = 1;
   const container = document.getElementById("container");
   container.className = "";
-  container.innerHTML = `<select name="Filtro por género" id="genre-filter" onchange="genreFilter()">
-  <option value="0">Selecciona un género</option>
-  <option value="0">Todos</option>
-  </select>
-  <h1>Series</h1>
+  container.innerHTML = `
+  <div id="container-select">
+    <h2 class="section-title">Series</h2>
+    <select name="Filtro por género" id="genre-filter" onchange="genreFilter()">
+      <option value="0">Selecciona un género</option>
+      <option value="0">Todos</option>
+    </select>
+  </div>
   <hr>
   <div id="series-list">
 
   </div>
-  <div id="show-more" onclick="showMore()">Mostrar más</div>`;
+  <div class="show-more" onclick="showMore()">Mostrar más</div>`;
   // getGenres();
   getSeriesList();
 }
@@ -185,11 +188,11 @@ function returnToList() {
 function showMore() {
   page++;
   const searchValue = document.getElementById("search");
-  if (searchValue.value !== "") {
-    searchSerie();
-  } else {
+  // if (searchValue.value !== "") {
+  //   searchSerie();
+  // } else {
     getSeriesList();
-  }
+  // }
 }
 
 // Esta función disminuye en 1 el valor de page, realizando una petición a la página anterior de la api
