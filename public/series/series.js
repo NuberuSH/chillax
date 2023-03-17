@@ -96,7 +96,7 @@ window.onload = getSeriesList;
 function showSerieInfo(idSerie) {
   const container = document.getElementById("container");
   container.className = "serie-info-container";
-  container.innerHTML = "<div class='go-back' onclick='returnToList();'>Series\n</div><h1 id='serie-title'></h1>\n<hr>";
+  container.innerHTML = "<div class='go-back' onclick='returnToList();'>Volver atrás\n</div><h1 id='serie-title'></h1>\n<hr>";
   const serieTitle = document.getElementById("serie-title");
   const smallContainer = document.createElement("div");
   smallContainer.className = "small-container";
@@ -154,11 +154,14 @@ function returnToList() {
   page = 1;
   const container = document.getElementById("container");
   container.className = "";
-  container.innerHTML = `<select name="Filtro por género" id="genre-filter" onchange="genreFilter()">
-  <option value="0">Selecciona un género</option>
-  <option value="0">Todos</option>
-  </select>
-  <h2 class="section-title">Series</h2>
+  container.innerHTML = `
+  <div id="container-select">
+    <h2 class="section-title">Series</h2>
+    <select name="Filtro por género" id="genre-filter" onchange="genreFilter()">
+      <option value="0">Selecciona un género</option>
+      <option value="0">Todos</option>
+    </select>
+  </div>
   <hr>
   <div id="series-list">
 
