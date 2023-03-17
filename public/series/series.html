@@ -9,12 +9,21 @@
   <script defer src="./series.js"></script>
 </head>
 <body>
+  <header>
+    <a href="/" class="header-nav-a">
+      <img src="/images/logo/chillaxSombras.svg" alt="logo" id="logo-nav-bar" />
+    </a>
+    </header>
+
   <div id="container">
+    <div id="container-select">
+
+      <h2 class="section-title">Series</h2>
     <select name="Filtro por género" id="genre-filter" onchange="genreFilter()">
       <option value="0">Selecciona un género</option>
       <option value="0">Todos</option>
     </select>
-    <h1>Series</h1>
+    </div>
     <hr>
     <div id="series-list">
 
