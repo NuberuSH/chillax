@@ -13,25 +13,13 @@ function getMovies() {
   })
   .then(data => {//Recibimos la respuesta de la api (data) y recorremos la lista que contiene (results) para mostrar las películas en el html
     for (let i = 0; i < 6; i++) {
-      let divMovie = document.createElement("div");
-      divMovie.className = "movie";
-      divMovie.id = data.results[i].id;
-      divMovie.onclick = function() {
-        showMovieInfo(data.results[i].id);
-      };
-      let img = document.createElement("img");
-      img.className = "poster";
-      img.src = `https://image.tmdb.org/t/p/w500${data.results[i].poster_path}`;
-      img.alt = data.results[i].title;
-      let divMovieFooter = document.createElement("div");
-      divMovieFooter.className = "movie-footer";
-      let footerTitle = document.createElement("div");
-      footerTitle.className = "title";
-      footerTitle.innerText = data.results[i].title;
-      divMovieFooter.appendChild(footerTitle);
-      divMovie.appendChild(img);
-      divMovie.appendChild(divMovieFooter);
-      list.appendChild(divMovie);
+      list.innerHTML += `
+      <div id="${data.results[i].id}" class="movie" onclick="showMovieInfo(${data.results[i].id})">
+        <img class="poster" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}" alt="Poster de la película ${data.results[i].title}">
+        <div class="movie-footer">
+          <div class="title">${data.results[i].title}</div>
+        </div>
+      </div>`;
     }
   })
   .catch(error => {
@@ -47,25 +35,13 @@ function getSeries() {
   })
   .then(data => {//Recibimos la respuesta de la api (data) y recorremos la lista que contiene (results) para mostrar las películas en el html
     for (let i = 0; i < 6; i++) {
-      let divSerie = document.createElement("div");
-      divSerie.className = "serie";
-      divSerie.id = data.results[i].id;
-      divSerie.onclick = function() {
-        showSerieInfo(data.results[i].id);
-      };
-      let img = document.createElement("img");
-      img.className = "poster";
-      img.src = `https://image.tmdb.org/t/p/w500${data.results[i].poster_path}`;
-      img.alt = data.results[i].title;
-      let divSerieFooter = document.createElement("div");
-      divSerieFooter.className = "serie-footer";
-      let footerTitle = document.createElement("div");
-      footerTitle.className = "title";
-      footerTitle.innerText = data.results[i].original_name;
-      divSerieFooter.appendChild(footerTitle);
-      divSerie.appendChild(img);
-      divSerie.appendChild(divSerieFooter);
-      list.appendChild(divSerie);
+      list.innerHTML += `
+      <div id="${data.results[i].id}" class="serie" onclick="showSerieInfo(${data.results[i].id})">
+        <img class="poster" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}" alt="Poster de la película ${data.results[i].original_name}">
+        <div class="movie-footer">
+          <div class="title">${data.results[i].original_name}</div>
+        </div>
+      </div>`;
     }
   })
   .catch(error => {
@@ -86,25 +62,19 @@ function showSerieInfo(idSerie) {
       return response.json();
     })
     .then(data => {
-      serieTitle.innerText = data.name;
-      const cover = document.createElement("img");
-      cover.setAttribute("src", `https://image.tmdb.org/t/p/w500${data.poster_path}`);
-      cover.setAttribute("alt", `Portada de ${data.name}`);
-      cover.id = "serie-poster";
-      const infoBody = document.createElement("div");
-      infoBody.id = "info-body";
-      const additionalInfo = document.createElement("div");
-      additionalInfo.className = "additional-info";
-      const releaseDate = document.createElement("p");
-      releaseDate.className = "release-date";
-      releaseDate.innerText = `Primera emisión: ${data.first_air_date}`;
-      additionalInfo.appendChild(releaseDate);
-      const runtime = document.createElement("p");
-      runtime.className = "runtime";
+      container.innerHTML += `
+      <div class="small-container">
+        <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="Portada de la serie ${data.name}" id="serie-poster">
+        <div id="info-body">
+          <div class="additional-info">
+            <p class="release-date">Primera emisión: ${data.first_air_date}</p>            
+          </div>
+        </div>
+      </div>`;
+      const additionalInfo = document.getElementsByClassName("additional-info");
       if (data.episode_run_time > 0) {
-        runtime.innerText = `Duración aproximada episodio: ${data.episode_run_time} minutos`;
+        additionalInfo[0].innerHTML += `<p class="runtime">Duración aproximada episodio: ${data.episode_run_time} minutos</p>`;
       }
-      additionalInfo.appendChild(runtime);
       const genres = document.createElement("p");
       genres.className = "genres";
       genres.innerText = "Género/s: ";
@@ -115,21 +85,14 @@ function showSerieInfo(idSerie) {
           genres.innerText += `${data.genres[i].name}`;
         }
       }
-      additionalInfo.appendChild(genres);
-      const overview = document.createElement("div");
-      overview.className = "sinopsis";
-      overview.innerText = data.overview;
-      smallContainer.appendChild(cover);
-      infoBody.appendChild(additionalInfo);
-      infoBody.appendChild(overview);
-      smallContainer.appendChild(infoBody);
-      container.appendChild(smallContainer);
+      additionalInfo[0].appendChild(genres);
+      const infoBody = document.getElementById("info-body");
+      infoBody.innerHTML += `<div class="sinopsis">${data.overview}</div>`;
     })
     .catch(error => {
       console.error(error);
     });
 }
-
 function showMovieInfo(idMovie) {
   let container = document.getElementById("container");
   container.className = "movie-info-container";
@@ -143,44 +106,32 @@ function showMovieInfo(idMovie) {
     return response.json();
   })
   .then(data => {
-    movieTitle.innerText = data.title;
-    let cover = document.createElement("img");
-    cover.setAttribute('src', `https://image.tmdb.org/t/p/w500${data.poster_path}`);
-    cover.setAttribute('alt', `Portada de ${data.title}`);
-    cover.id = "movie-poster";
-    let infoBody = document.createElement("div");
-    infoBody.id = "info-body";
-    let additionalInfo = document.createElement("div");
-    additionalInfo.className = "additional-info";
-    let releaseDate = document.createElement("p");
-    releaseDate.className = "release-date";
-    releaseDate.innerText = `Fecha de estreno: ${data.release_date}`;
-    additionalInfo.appendChild(releaseDate);
-    let runtime = document.createElement("p");
-    runtime.className = "runtime";
-    if (data.runtime > 0) {
-      runtime.innerText = `Duración aproximada: ${data.runtime} minutos`;
-    }
-    additionalInfo.appendChild(runtime);
-    let genres = document.createElement("p");
-    genres.className = "genres";
-    genres.innerText = "Género/s: ";
-    for (let i = 0; i < data.genres.length; i++) {
-      if (i < data.genres.length - 1) {
-        genres.innerText += `${data.genres[i].name}, `;
-      } else {
-        genres.innerText += `${data.genres[i].name}`;
+    container.innerHTML += `
+      <div class="small-container">
+        <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="Portada de la película ${data.name}" id="movie-poster">
+        <div id="info-body">
+          <div class="additional-info">
+            <p class="release-date">Fecha de estreno: ${data.first_air_date}</p>            
+          </div>
+        </div>
+      </div>`;
+      const additionalInfo = document.getElementsByClassName("additional-info");
+      if (data.episode_run_time > 0) {
+        additionalInfo[0].innerHTML += `<p class="runtime">Duración: ${data.episode_run_time} minutos</p>`;
       }
-    }
-    additionalInfo.appendChild(genres);
-    let overview = document.createElement("div");
-    overview.className = "sinopsis";
-    overview.innerText = data.overview;
-    smallContainer.appendChild(cover);
-    infoBody.appendChild(additionalInfo);
-    infoBody.appendChild(overview);
-    smallContainer.appendChild(infoBody);
-    container.appendChild(smallContainer);
+      const genres = document.createElement("p");
+      genres.className = "genres";
+      genres.innerText = "Género/s: ";
+      for (let i = 0; i < data.genres.length; i++) {
+        if (i < data.genres.length - 1) {
+          genres.innerText += `${data.genres[i].name}, `;
+        } else {
+          genres.innerText += `${data.genres[i].name}`;
+        }
+      }
+      additionalInfo[0].appendChild(genres);
+      const infoBody = document.getElementById("info-body");
+      infoBody.innerHTML += `<div class="sinopsis">${data.overview}</div>`;
   })
   .catch(error => {
     console.error(error);
