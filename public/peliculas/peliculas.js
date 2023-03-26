@@ -2,8 +2,7 @@ let page = 1;
 let genre = 0;
 let search = "";
 
-function getMovieList() {
-  let list = document.getElementById("movie-list");
+function getMovieList() {  
   getGenres();
   if (genre == 0) {
     fetch(`https://api.themoviedb.org/3/discover/movie?api_key=039e4f7f61c4c831908c02f8c3e9aba0&language=es-ES&sort_by=popularity.desc&include_adult=false&include_video=false&page=${+page}`)
@@ -12,13 +11,7 @@ function getMovieList() {
     })
     .then(data => {//Recibimos la respuesta de la api (data) y recorremos la lista que contiene (results) para mostrar las películas en el html
       for (let i = 0; i < data.results.length; i++) {
-        list.innerHTML += `
-        <div id="${data.results[i].id}" class="movie" onclick="showMovieInfo(${data.results[i].id})">
-          <img class="poster" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}" alt="Poster de la película ${data.results[i].title}">
-          <div class="movie-footer">
-            <div class="title">${data.results[i].title}</div>
-          </div>
-        </div>`;
+        buildListHTML(data.results[i]);
       }
     })
     .catch(error => {
@@ -31,13 +24,7 @@ function getMovieList() {
     })
     .then(data => { //Recibimos la respuesta de la api (data) y recorremos la lista que contiene (results) para mostrar las películas en el html
       for (let i = 0; i < data.results.length; i++) {
-        list.innerHTML += `
-        <div id="${data.results[i].id}" class="movie" onclick="showMovieInfo(${data.results[i].id})">
-          <img class="poster" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}" alt="Poster de la película ${data.results[i].title}">
-          <div class="movie-footer">
-            <div class="title">${data.results[i].title}</div>
-          </div>
-        </div>`;
+        buildListHTML(data.results[i]);
       }
     })
     .catch(error => {
@@ -114,7 +101,7 @@ function showMovieInfo(idMovie) {
 
 function returnToList() {
   page = 1;
-  let container = document.getElementById("container");
+  const container = document.getElementById("container");
   container.className = "";
   container.innerHTML = `
   <div id="container-select">
@@ -146,7 +133,7 @@ function showMore() {
 
 function genreFilter() {
   page = 1;
-  let list = document.getElementById("movie-list");
+  const list = document.getElementById("movie-list");
   genre = document.getElementById("genre-filter").value;
   list.innerHTML = "";
   getMovieList();
@@ -156,7 +143,7 @@ function searchMovie() {
   if (search === "") {
     page = 1;
   }
-  let list = document.getElementById("movie-list");
+  const list = document.getElementById("movie-list");
   if (page === 1) {
     list.innerHTML = "";
   }
@@ -167,16 +154,21 @@ function searchMovie() {
     })
     .then(data => {//Recibimos la respuesta de la api (data) y recorremos la lista que contiene (results) para mostrar las películas en el html
       for (let i = 0; i < data.results.length; i++) {
-        list.innerHTML += `
-        <div id="${data.results[i].id}" class="movie" onclick="showMovieInfo(${data.results[i].id})">
-          <img class="poster" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}" alt="Poster de la película ${data.results[i].title}">
-          <div class="movie-footer">
-            <div class="title">${data.results[i].title}</div>
-          </div>
-        </div>`;
+        buildListHTML(data.results[i]);
       }
     })
     .catch(error => {
       console.error(error);
     });
+}
+
+function buildListHTML(movie) {
+  const list = document.getElementById("movie-list");
+  list.innerHTML += `
+    <div id="${movie.id}" class="movie" onclick="showMovieInfo(${movie.id})">
+      <img class="poster" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="Poster de la película ${movie.title}">
+      <div class="movie-footer">
+        <div class="title">${movie.title}</div>
+      </div>
+    </div>`;
 }

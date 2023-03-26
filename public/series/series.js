@@ -3,7 +3,6 @@ let genre = 0;
 let search = "";
 
 function getSeriesList() {
-  const list = document.getElementById("series-list");
   getSeriesGenres();
   if (genre == 0) {
     fetch(`https://api.themoviedb.org/3/discover/tv?api_key=039e4f7f61c4c831908c02f8c3e9aba0&language=es-ES&sort_by=popularity.desc&include_adult=false&include_video=false&page=${+page}`)
@@ -12,13 +11,7 @@ function getSeriesList() {
       })
       .then(data => { // Recibimos la respuesta de la api (data) y recorremos la lista que contiene (results) para mostrar las películas en el html
         for (let i = 0; i < data.results.length; i++) {
-          list.innerHTML += `
-          <div id="${data.results[i].id}" class="serie" onclick="showSerieInfo(${data.results[i].id})">
-            <img class="poster" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}" alt="Poster de la serie ${data.results[i].name}">
-            <div class="serie-footer">
-              <div class="title">${data.results[i].name}</div>
-            </div>
-          </div>`;
+          buildListHTML(data.results[i]);
         }
       })
       .catch(error => {
@@ -31,13 +24,7 @@ function getSeriesList() {
       })
       .then(data => { // Recibimos la respuesta de la api (data) y recorremos la lista que contiene (results) para mostrar las películas en el html
         for (let i = 0; i < data.results.length; i++) {
-          list.innerHTML += `
-          <div id="${data.results[i].id}" class="serie" onclick="showSerieInfo(${data.results[i].id})">
-            <img class="poster" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}" alt="Poster de la serie ${data.results[i].name}">
-            <div class="serie-footer">
-              <div class="title">${data.results[i].name}</div>
-            </div>
-          </div>`;
+          buildListHTML(data.results[i]);
         }
       })
       .catch(error => {
@@ -144,18 +131,18 @@ function showMore() {
 }
 
 function genreFilter() {
-  page = 1;
   const list = document.getElementById("series-list");
+  page = 1;
   genre = document.getElementById("genre-filter").value;
   list.innerHTML = "";
   getSeriesList();
 }
 
 function searchSerie() {
+  const list = document.getElementById("series-list");
   if (search === "") {
     page = 1;
   }
-  const list = document.getElementById("series-list");
   if (page === 1) {
     list.innerHTML = "";
   }
@@ -166,16 +153,21 @@ function searchSerie() {
     })
     .then(data => { // Recibimos la respuesta de la api (data) y recorremos la lista que contiene (results) para mostrar las películas en el html
       for (let i = 0; i < data.results.length; i++) {
-        list.innerHTML += `
-          <div id="${data.results[i].id}" class="serie" onclick="showSerieInfo(${data.results[i].id})">
-            <img class="poster" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}" alt="Poster de la serie ${data.results[i].name}">
-            <div class="serie-footer">
-              <div class="title">${data.results[i].name}</div>
-            </div>
-          </div>`;
+        buildListHTML(data.results[i]);
       }
     })
     .catch(error => {
       console.error(error);
     });
+}
+
+function buildListHTML(serie) {
+  const list = document.getElementById("series-list");
+  list.innerHTML += `
+    <div id="${serie.id}" class="serie" onclick="showSerieInfo(${serie.id})">
+      <img class="poster" src="https://image.tmdb.org/t/p/w500${serie.poster_path}" alt="Poster de la serie ${serie.name}">
+      <div class="serie-footer">
+        <div class="title">${serie.name}</div>
+      </div>
+    </div>`;
 }
