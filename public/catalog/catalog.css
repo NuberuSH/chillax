@@ -1,6 +1,10 @@
 @import "https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto+Slab:wght@100&display=swap";
 @import "/palette.css";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html {
   font-family:
     "Dancing Script", /* esta no se esta aplicando por la de abajo */
@@ -548,4 +552,59 @@ footer p {
 
 .api-logo {
   max-width: 128px;
+}
+
+/* cosas navbar rosa */
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    list-style: none;
+    font-size: 1.5rem;
+  }
+
+  .logoc {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .navbar {
+    text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    list-style: none;
+    font-size: 0.7rem;
+  }
+
+  .logoc {
+    max-width: 50%;
+    height: auto;
+  }
+}
+
+a {
+  color: white;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: grey;
+  text-decoration: inherit;
+}
+
+.catalog {
+  padding: 0.75rem;
+}
+
+.trending {
+  padding: 0.75rem;
+}
+
+.nosotros {
+  padding: 0.75rem;
+}
+
+.logo {
+  position: fixed;
+  transition-duration: 0.3s;
 }

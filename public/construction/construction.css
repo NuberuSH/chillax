@@ -121,3 +121,57 @@ footer {
 /* footer p {
   color: var(--regular-text-color);
 } */
+
+/* cosas navbar rosa */
+@media screen and (min-width: 768px) {
+  .navbar {
+    text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    list-style: none;
+    font-size: 1.5rem;
+  }
+
+  .logoc {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .navbar {
+    text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    list-style: none;
+    font-size: 0.7rem;
+  }
+
+  .logoc {
+    max-width: 50%;
+    height: auto;
+  }
+}
+
+a {
+  color: white;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: grey;
+  text-decoration: inherit;
+}
+
+.catalog {
+  padding: 0.75rem;
+}
+
+.trending {
+  padding: 0.75rem;
+}
+
+.nosotros {
+  padding: 0.75rem;
+}
+
+.logo {
+  position: fixed;
+  transition-duration: 0.3s;
+}
