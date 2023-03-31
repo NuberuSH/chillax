@@ -1,11 +1,14 @@
-@import "https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto+Slab:wght@100&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap";
+
+/* @import "https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto+Slab:wght@100&display=swap"; */
 
 * {
-  font-family: "Dancing Script", cursive;
+  /* font-family: "Dancing Script", cursive;
   font-family:
     "Roboto Slab",
-    serif;
-  font-weight: 700;
+    serif; */
+  font-family: Montserrat;
+  font-weight: 300;
 }
 
 body {
@@ -37,16 +40,20 @@ header > * {
 #icon-back {
   width: auto;
   height: 48px;
-  align-self: stretch;
+
+  /* align-self: stretch; */
+  margin-top: 50%;
 }
 
 .section-title {
   max-width: fit-content;
   color: #ccc;
-  font: 3rem "Cavalier Bold";
-  background-color: #333;
+  font-size: 3rem;
+
+  /* background-color: #333; */
   padding: 13px 10px 5px;
-  border: 3px solid #222;
+
+  /* border: 3px solid #222; */
   border-radius: 5px;
 }
 
@@ -162,6 +169,7 @@ hr {
   display: block;
   margin: auto;
   border-radius: 10px 10px 0 0;
+  aspect-ratio: 2/3;
 }
 
 .serie-footer {
@@ -199,7 +207,8 @@ hr {
 .go-back {
   font-size: x-large;
   cursor: pointer;
-  border: 2px solid black;
+
+  /* border: 2px solid black; */
   border-radius: 7px;
   width: fit-content;
   padding: 0.5%;
@@ -209,6 +218,12 @@ hr {
     1em 1em 10em rgb(255 255 255 / 29.9%);
   margin-left: 3%;
   margin-top: 3%;
+}
+
+.go-back:hover {
+  color: #fff;
+  background-color: #f37373;
+  transform: scale(1.04);
 }
 
 @media (min-width: 900px) {
