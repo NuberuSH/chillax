@@ -1,13 +1,11 @@
+@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nunito:wght@600&display=swap";
 
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nunito:wght@600&display=swap');
-
-  @font-face {
-    font-family: Montserrat;
-    src: url('../public/fonts/Montserrat.ttf');
-    font-weight: normal;
-    font-style: normal;
-  }
-
+@font-face {
+  font-family: Montserrat;
+  src: url("/public/fonts/Montserrat-VariableFont_wght.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
   background-color: #444;
@@ -43,14 +41,14 @@ nav {
   gap: 2.8rem;
 }
 
-a{
+a {
   color: #ccc;
   font-style: italic;
   text-decoration: none;
-  text-align: center; 
+  text-align: center;
 }
 
-a:hover{
+a:hover {
   color: #c12626;
 }
 
@@ -60,33 +58,32 @@ a:hover{
 
 .section-title {
   max-width: fit-content;
-  color: #ccc;  
+  color: #ccc;
 }
 
-strong{
+strong {
   font-style: italic;
   font-size: small;
 }
 
-.equipo{
+.equipo {
   display: flex;
   justify-content: center;
   margin: 0 auto;
   margin-top: 5px;
   margin-bottom: 25px;
   padding-bottom: 50px;
-
 }
 
 figure {
   margin: 0;
   padding: 10px;
   width: 250px;
-  height: 250px;  
+  height: 250px;
 }
 
-figcaption{
-  text-align:center;
+figcaption {
+  text-align: center;
   font-weight: bolder;
   color: #ccc;
   text-shadow: 2px 2px 4px #00000080;
@@ -105,14 +102,14 @@ figcaption{
   align-items: center;
 }
 
-.oculto{
+.oculto {
   display: none;
 }
 
-.play{
+.play {
   background-color: transparent;
   width: 40px;
-  height:40px;
+  height: 40px;
   cursor: pointer;
   transition: transform 0.5s ease;
 }
@@ -135,14 +132,13 @@ button {
   border: none;
   border-radius: 20%;
   margin: 10px;
-
 }
 
-p{
+p {
   text-align: center;
-  font-family: Montserrat, sans-serif; 
+  font-family: Montserrat, sans-serif;
   color: #ccc;
-  text-shadow:  1px 1px 2px #00000080;
+  text-shadow: 1px 1px 2px #00000080;
 }
 
 .footer {
