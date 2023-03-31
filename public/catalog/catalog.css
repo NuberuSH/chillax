@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
-/*@import "https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto+Slab:wght@100&display=swap";*/
+@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap";
+
+/* @import "https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto+Slab:wght@100&display=swap"; */
 @import "/palette.css";
 
 @tailwind base;
@@ -7,13 +8,14 @@
 @tailwind utilities;
 
 html {
-  /*font-family:
+  /* font-family:
     "Dancing Script", /* esta no se esta aplicando por la de abajo *//*
     cursive;
   font-family:
     "Roboto Slab",
-    serif;*/
-    font-family: 'Montserrat';
+    serif; */
+
+  font-family: Montserrat;
   font-weight: 300;
 }
 
@@ -80,7 +82,6 @@ hr {
   width: 35%;
   border-radius: 10px;
   aspect-ratio: 2/3;
-
 }
 
 #movie-title {
@@ -261,7 +262,6 @@ hr {
   width: 35%;
   border-radius: 10px 10px 0 0;
   aspect-ratio: 2/3;
-
 }
 
 #serie-title {
@@ -418,9 +418,11 @@ nav {
   max-width: fit-content;
   color: #ccc;
   font-size: 3rem;
-  /*background-color: #333;*/
+
+  /* background-color: #333; */
   padding: 0.5%;
-  /*border: 3px solid #222;*/
+
+  /* border: 3px solid #222; */
   border-radius: 5px;
 }
 
@@ -491,7 +493,6 @@ nav {
   margin: auto;
   border-radius: 10px 10px 0 0;
   aspect-ratio: 2/3;
-
 }
 
 .movie-footer,
@@ -520,7 +521,8 @@ nav {
   background-color: #333;
   color: #ccc;
   font-weight: 700;
-  /*border: 2px solid #000;*/
+
+  /* border: 2px solid #000; */
   border-radius: 5px;
   padding: 10px;
   transition: 0.5s all;
@@ -564,7 +566,7 @@ footer p {
 
 /* cosas navbar rosa */
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .navbar {
     text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
     list-style: none;
@@ -577,7 +579,7 @@ footer p {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
   .navbar {
     text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
     list-style: none;
@@ -585,8 +587,8 @@ footer p {
   }
 
   .logoc {
-    max-width: 50%;
-    height: auto;
+    width: auto;
+    height: 25px;
   }
 }
 
