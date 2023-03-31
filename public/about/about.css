@@ -1,17 +1,19 @@
-@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nunito:wght@600&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap";
 
-@font-face {
+/* @import "https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nunito:wght@600&display=swap"; */
+
+/* @font-face {
   font-family: Montserrat;
   src: url("/public/fonts/Montserrat-VariableFont_wght.ttf");
   font-weight: normal;
   font-style: normal;
-}
+} */
 
 body {
   background-color: #444;
-  font-family: Montserrat, sans-serif;
+  font-family: Montserrat;
   font-size: 18px;
-  font-weight: 900;
+  font-weight: 300;
   flex-direction: column;
 }
 
@@ -43,7 +45,6 @@ nav {
 
 a {
   color: #ccc;
-  font-style: italic;
   text-decoration: none;
   text-align: center;
 }
@@ -67,19 +68,28 @@ strong {
 }
 
 .equipo {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  margin-top: 5px;
-  margin-bottom: 25px;
-  padding-bottom: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
+  margin-top: 25px;
+  font-weight: bolder;
+}
+
+@media (max-width: 800px) {
+  .equipo {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 599px) {
+  .equipo {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 figure {
   margin: 0;
   padding: 10px;
-  width: 250px;
-  height: 250px;
 }
 
 figcaption {
@@ -141,8 +151,77 @@ p {
   text-shadow: 1px 1px 2px #00000080;
 }
 
-.footer {
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-top: 2px solid var(--border-color);
-  bottom: 0;
-  width: 100%;
+  margin-top: 10px;
+}
+
+footer p {
+  color: white;
+  font-size: small;
+  text-align: justify;
+  text-align-last: center;
+}
+
+@media (max-width: 899px) {
+  footer p {
+    padding: 0 25px;
+  }
+}
+
+/* cosas navbar rosa */
+
+@media (min-width: 768px) {
+  .navbar {
+    text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    list-style: none;
+    font-size: 2rem;
+  }
+
+  .logoc {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    list-style: none;
+    font-size: 1rem;
+  }
+
+  .logoc {
+    height: 50px;
+  }
+}
+
+a {
+  color: white;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: grey;
+  text-decoration: inherit;
+}
+
+.landing {
+  padding: 0.75rem;
+}
+
+.trending {
+  padding: 0.75rem;
+}
+
+.about {
+  padding: 0.75rem;
+}
+
+.logo {
+  position: fixed;
+  transition-duration: 0.3s;
 }
