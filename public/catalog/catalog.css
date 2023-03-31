@@ -1,4 +1,5 @@
-@import "https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto+Slab:wght@100&display=swap";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+/*@import "https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto+Slab:wght@100&display=swap";*/
 @import "/palette.css";
 
 @tailwind base;
@@ -6,13 +7,14 @@
 @tailwind utilities;
 
 html {
-  font-family:
-    "Dancing Script", /* esta no se esta aplicando por la de abajo */
+  /*font-family:
+    "Dancing Script", /* esta no se esta aplicando por la de abajo *//*
     cursive;
   font-family:
     "Roboto Slab",
-    serif;
-  font-weight: 900;
+    serif;*/
+    font-family: 'Montserrat';
+  font-weight: 300;
 }
 
 body {
@@ -77,6 +79,8 @@ hr {
   margin-top: 3%;
   width: 35%;
   border-radius: 10px;
+  aspect-ratio: 2/3;
+
 }
 
 #movie-title {
@@ -256,6 +260,8 @@ hr {
   margin-top: 3%;
   width: 35%;
   border-radius: 10px 10px 0 0;
+  aspect-ratio: 2/3;
+
 }
 
 #serie-title {
@@ -411,10 +417,10 @@ nav {
 .section-title {
   max-width: fit-content;
   color: #ccc;
-  font: 3rem "Cavalier Bold";
-  background-color: #333;
+  font-size: 3rem;
+  /*background-color: #333;*/
   padding: 0.5%;
-  border: 3px solid #222;
+  /*border: 3px solid #222;*/
   border-radius: 5px;
 }
 
@@ -484,6 +490,8 @@ nav {
   display: block;
   margin: auto;
   border-radius: 10px 10px 0 0;
+  aspect-ratio: 2/3;
+
 }
 
 .movie-footer,
@@ -512,7 +520,7 @@ nav {
   background-color: #333;
   color: #ccc;
   font-weight: 700;
-  border: 2px solid #000;
+  /*border: 2px solid #000;*/
   border-radius: 5px;
   padding: 10px;
   transition: 0.5s all;
