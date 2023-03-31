@@ -29,5 +29,8 @@
     "vite": "^4.1.0"
   },
   "keywords": [],
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
 }

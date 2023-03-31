@@ -1,3 +1,4 @@
+
 function getContent() {
   getMovies();
   getSeries();
@@ -143,11 +144,6 @@ function returnToList() {
   const container = document.getElementById("container");
   container.className = "";
   container.innerHTML = `
-  <header>
-      <a href="/" class="header-nav-a">
-        <img src="/images/logo/chillaxSombras.svg" alt="logo" id="logo-nav-bar" />
-      </a>
-    </header>
     <h2 class="section-title">Películas</h2>
     <hr>
     <div id="movie-list">
