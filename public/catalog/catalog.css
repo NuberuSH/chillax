@@ -104,6 +104,12 @@ hr {
   margin-top: 3%;
 }
 
+.go-back:hover {
+  color: #fff;
+  background-color: #f37373;
+  transform: scale(1.04);
+}
+
 @media (min-width: 900px) {
   #movie-poster {
     margin: 3%;
