@@ -1,0 +1,148 @@
+@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nunito:wght@600&display=swap";
+
+@font-face {
+  font-family: Montserrat;
+  src: url("/public/fonts/Montserrat-VariableFont_wght.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: #444;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  flex-direction: column;
+}
+
+#container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  height: 90px;
+  padding: 0 var(--lateral-margin);
+  background-color: #5557;
+  margin-bottom: 2%;
+}
+
+header > * {
+  display: flex;
+  height: 100%;
+}
+
+nav {
+  gap: 2.8rem;
+}
+
+a {
+  color: #ccc;
+  font-style: italic;
+  text-decoration: none;
+  text-align: center;
+}
+
+a:hover {
+  color: #c12626;
+}
+
+#logo-nav-bar {
+  height: 100%;
+}
+
+.section-title {
+  max-width: fit-content;
+  color: #ccc;
+}
+
+strong {
+  font-style: italic;
+  font-size: small;
+}
+
+.equipo {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 25px;
+  padding-bottom: 50px;
+}
+
+figure {
+  margin: 0;
+  padding: 10px;
+  width: 250px;
+  height: 250px;
+}
+
+figcaption {
+  text-align: center;
+  font-weight: bolder;
+  color: #ccc;
+  text-shadow: 2px 2px 4px #00000080;
+}
+
+.contenido-adicional {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ver-mas {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.oculto {
+  display: none;
+}
+
+.play {
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.play:hover {
+  transform: rotate(90deg);
+}
+
+.play:active {
+  transform: rotate(90deg);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  background: #5557;
+  border: none;
+  border-radius: 20%;
+  margin: 10px;
+}
+
+p {
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  color: #ccc;
+  text-shadow: 1px 1px 2px #00000080;
+}
+
+.footer {
+  border-top: 2px solid var(--border-color);
+  bottom: 0;
+  width: 100%;
+}

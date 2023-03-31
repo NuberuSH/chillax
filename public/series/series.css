@@ -1,11 +1,12 @@
-@import "https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto+Slab:wght@100&display=swap";
+/*@import "https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto+Slab:wght@100&display=swap";*/
 
 * {
-  font-family: "Dancing Script", cursive;
+  /*font-family: "Dancing Script", cursive;
   font-family:
     "Roboto Slab",
-    serif;
-  font-weight: 700;
+    serif;*/
+    font-family: 'Montserrat';
+  font-weight: 300;
 }
 
 body {
