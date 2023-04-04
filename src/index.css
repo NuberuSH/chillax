@@ -83,16 +83,17 @@ h6 {
   isolation: isolate;
 }
 
-@font-face {
+/* @font-face {
   font-family: RobotoSlab;
   font-weight: 700;
   src: url("../fonts/RobotoSlab.ttf");
-}
+} */
 
 @font-face {
   font-family: Montserrat;
-  font-weight: 700;
-  src: url("../fonts/Montserrat.ttf");
+  src: url("/fonts/Montserrat.woff2");
+  font-weight: 100 900;
+  font-stretch: 50% 200%;
 }
 
 @layer components {
