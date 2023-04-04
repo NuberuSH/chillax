@@ -163,6 +163,10 @@ hr {
   }
 }
 
+.movie-h1, .serie-h1 {
+  align-self: center;
+}
+
 @media (max-width: 599px) {
   .movie-info-container {
     max-width: 599px;

@@ -220,6 +220,10 @@ hr {
   transform: scale(1.04);
 }
 
+.movie-h1 {
+  align-self: center;
+}
+
 @media (min-width: 900px) {
   #movie-poster {
     margin: 3%;

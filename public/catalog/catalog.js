@@ -53,7 +53,7 @@ function getSeries() {
 function showSerieInfo(idSerie) {
   const container = document.getElementById("container");
   container.className = "serie-info-container";
-  container.innerHTML = "<div class='go-back' onclick='returnToList();'>Volver atrás\n</div>\n<hr>";
+  container.innerHTML = "<div class='go-back' onclick='returnToList();'>Volver atrás\n</div>\n";
   const serieTitle = document.getElementById("serie-title");
   const smallContainer = document.createElement("div");
   smallContainer.className = "small-container";
@@ -65,6 +65,7 @@ function showSerieInfo(idSerie) {
     .then(data => {
       container.innerHTML += `
       <h1 class="serie-h1">${data.name}</h1>
+      <hr/>
       <div class="small-container">
         <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="Portada de la serie ${data.name}" id="serie-poster">
         <div id="info-body">
@@ -99,7 +100,7 @@ function showSerieInfo(idSerie) {
 function showMovieInfo(idMovie) {
   let container = document.getElementById("container");
   container.className = "movie-info-container";
-  container.innerHTML = "<div class='go-back' onclick='returnToList();'>Volver atrás</div>";
+  container.innerHTML = "<div class='go-back' onclick='returnToList();'>Volver atrás</div>\n";
   let movieTitle = document.getElementById("movie-title");
   let smallContainer = document.createElement("div");
   smallContainer.className = "small-container";
@@ -110,7 +111,8 @@ function showMovieInfo(idMovie) {
   })
   .then(data => {
     container.innerHTML += `
-      </h1 class="movie-h1">${data.title}<hr>
+      <h1 class="movie-h1">${data.title}</h1>
+      <hr/>
       <div class="small-container">
         <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="Portada de la película ${data.title}" id="movie-poster">
         <div id="info-body">

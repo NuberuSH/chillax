@@ -57,7 +57,7 @@ window.onload = getMovieList;
  function showMovieInfo(idMovie) {
   let container = document.getElementById("container");
   container.className = "movie-info-container";
-  container.innerHTML = "<div class='go-back' onclick='returnToList();'>Volver atrás</div>";
+  container.innerHTML = "<div class='go-back' onclick='returnToList()'>Volver atrás</div>\n";
   let movieTitle = document.getElementById("movie-title");
   let smallContainer = document.createElement("div");
   smallContainer.className = "small-container";
@@ -68,7 +68,8 @@ window.onload = getMovieList;
   })
   .then(data => {
     container.innerHTML += `
-      </h1 class="movie-h1">${data.title}<hr>
+      <h1 class="movie-h1">${data.title}</h1>
+      <hr/>
       <div class="small-container">
         <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="Portada de la película ${data.title}" id="movie-poster">
         <div id="info-body">
