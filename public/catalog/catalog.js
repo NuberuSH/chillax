@@ -53,7 +53,7 @@ function getSeries() {
 function showSerieInfo(idSerie) {
   const container = document.getElementById("container");
   container.className = "serie-info-container";
-  container.innerHTML = "<div class='go-back' onclick='returnToList();'>Volver atrás\n</div><h1 id='serie-title'></h1>\n<hr>";
+  container.innerHTML = "<div class='go-back' onclick='returnToList();'>Volver atrás\n</div>\n<hr>";
   const serieTitle = document.getElementById("serie-title");
   const smallContainer = document.createElement("div");
   smallContainer.className = "small-container";
@@ -64,6 +64,7 @@ function showSerieInfo(idSerie) {
     })
     .then(data => {
       container.innerHTML += `
+      <h1>${data.name}</h1>
       <div class="small-container">
         <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="Portada de la serie ${data.name}" id="serie-poster">
         <div id="info-body">
@@ -94,10 +95,11 @@ function showSerieInfo(idSerie) {
       console.error(error);
     });
 }
+
 function showMovieInfo(idMovie) {
   let container = document.getElementById("container");
   container.className = "movie-info-container";
-  container.innerHTML = "<div class='go-back' onclick='returnToList();'>Volver atrás\n</div><h1 id='movie-title'></h1>\n<hr>";
+  container.innerHTML = "<div class='go-back' onclick='returnToList();'>Volver atrás</div>";
   let movieTitle = document.getElementById("movie-title");
   let smallContainer = document.createElement("div");
   smallContainer.className = "small-container";
@@ -108,17 +110,18 @@ function showMovieInfo(idMovie) {
   })
   .then(data => {
     container.innerHTML += `
+      </h1>${data.title}<hr>
       <div class="small-container">
-        <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="Portada de la película ${data.name}" id="movie-poster">
+        <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="Portada de la película ${data.title}" id="movie-poster">
         <div id="info-body">
           <div class="additional-info">
-            <p class="release-date">Fecha de estreno: ${data.first_air_date}</p>            
+            <p class="release-date">Fecha de estreno: ${data.release_date}</p>            
           </div>
         </div>
       </div>`;
       const additionalInfo = document.getElementsByClassName("additional-info");
-      if (data.episode_run_time > 0) {
-        additionalInfo[0].innerHTML += `<p class="runtime">Duración: ${data.episode_run_time} minutos</p>`;
+      if (data.runtime > 0) {
+        additionalInfo[0].innerHTML += `<p class="runtime">Duración: ${data.runtime} minutos</p>`;
       }
       const genres = document.createElement("p");
       genres.className = "genres";
