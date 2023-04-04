@@ -64,7 +64,7 @@ function showSerieInfo(idSerie) {
     })
     .then(data => {
       container.innerHTML += `
-      <h1>${data.name}</h1>
+      <h1 class="serie-h1">${data.name}</h1>
       <div class="small-container">
         <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="Portada de la serie ${data.name}" id="serie-poster">
         <div id="info-body">
@@ -110,7 +110,7 @@ function showMovieInfo(idMovie) {
   })
   .then(data => {
     container.innerHTML += `
-      </h1>${data.title}<hr>
+      </h1 class="movie-h1">${data.title}<hr>
       <div class="small-container">
         <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="Portada de la película ${data.title}" id="movie-poster">
         <div id="info-body">

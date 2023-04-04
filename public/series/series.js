@@ -67,7 +67,7 @@ function showSerieInfo(idSerie) {
     })
     .then(data => {
       container.innerHTML += `
-      <h1>${data.name}</h1>
+      <h1 id="serie-h1">${data.name}</h1>
       <div class="small-container">
         <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="Portada de la serie ${data.name}" id="serie-poster">
         <div id="info-body">

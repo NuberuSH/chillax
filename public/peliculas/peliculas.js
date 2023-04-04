@@ -68,7 +68,7 @@ window.onload = getMovieList;
   })
   .then(data => {
     container.innerHTML += `
-      </h1>${data.title}<hr>
+      </h1 class="movie-h1">${data.title}<hr>
       <div class="small-container">
         <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="Portada de la película ${data.title}" id="movie-poster">
         <div id="info-body">
