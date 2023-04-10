@@ -13,7 +13,7 @@ function getMovies() {
     return response.json();
   })
   .then(data => {//Recibimos la respuesta de la api (data) y recorremos la lista que contiene (results) para mostrar las películas en el html
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 5; i++) {
       list.innerHTML += `
       <div id="${data.results[i].id}" class="movie" onclick="showMovieInfo(${data.results[i].id})">
         <img class="poster" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}" alt="Poster de la película ${data.results[i].title}">
@@ -35,7 +35,7 @@ function getSeries() {
     return response.json();
   })
   .then(data => {//Recibimos la respuesta de la api (data) y recorremos la lista que contiene (results) para mostrar las películas en el html
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 5; i++) {
       list.innerHTML += `
       <div id="${data.results[i].id}" class="serie" onclick="showSerieInfo(${data.results[i].id})">
         <img class="poster" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}" alt="Poster de la película ${data.results[i].original_name}">
@@ -120,7 +120,7 @@ function showMovieInfo(idMovie) {
             <p class="release-date">Fecha de estreno: ${data.release_date}</p>            
           </div>
         </div>
-      </div>`;
+      </div>      `;
       const additionalInfo = document.getElementsByClassName("additional-info");
       if (data.runtime > 0) {
         additionalInfo[0].innerHTML += `<p class="runtime">Duración: ${data.runtime} minutos</p>`;
