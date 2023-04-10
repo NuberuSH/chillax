@@ -226,6 +226,10 @@ hr {
   transform: scale(1.04);
 }
 
+.serie-h1 {
+  align-self: center;
+}
+
 @media (min-width: 900px) {
   #serie-poster {
     margin: 3%;
@@ -236,7 +240,34 @@ hr {
   }
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 2px solid var(--border-color);
+  margin-top: 10px;
+}
+
+footer p {
+  color: white;
+  font-size: small;
+  text-align: justify;
+  text-align-last: center;
+}
+
+.api-disclaimer {
+  font-size: smaller;
+}
+
+.api-logo {
+  max-width: 128px;
+}
+
 @media (max-width: 899px) {
+  footer p {
+    padding: 0 25px;
+  }
+
   #icon-back {
     width: auto;
     height: 48px;

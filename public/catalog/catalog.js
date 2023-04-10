@@ -13,7 +13,7 @@ function getMovies() {
     return response.json();
   })
   .then(data => {//Recibimos la respuesta de la api (data) y recorremos la lista que contiene (results) para mostrar las películas en el html
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 5; i++) {
       list.innerHTML += `
       <div id="${data.results[i].id}" class="movie" onclick="showMovieInfo(${data.results[i].id})">
         <img class="poster" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}" alt="Poster de la película ${data.results[i].title}">
@@ -35,7 +35,7 @@ function getSeries() {
     return response.json();
   })
   .then(data => {//Recibimos la respuesta de la api (data) y recorremos la lista que contiene (results) para mostrar las películas en el html
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 5; i++) {
       list.innerHTML += `
       <div id="${data.results[i].id}" class="serie" onclick="showSerieInfo(${data.results[i].id})">
         <img class="poster" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}" alt="Poster de la película ${data.results[i].original_name}">
@@ -53,7 +53,7 @@ function getSeries() {
 function showSerieInfo(idSerie) {
   const container = document.getElementById("container");
   container.className = "serie-info-container";
-  container.innerHTML = "<div class='go-back' onclick='returnToList();'>Volver atrás\n</div><h1 id='serie-title'></h1>\n<hr>";
+  container.innerHTML = "<div class='go-back' onclick='returnToList();'>Volver atrás\n</div>\n";
   const serieTitle = document.getElementById("serie-title");
   const smallContainer = document.createElement("div");
   smallContainer.className = "small-container";
@@ -64,6 +64,8 @@ function showSerieInfo(idSerie) {
     })
     .then(data => {
       container.innerHTML += `
+      <h1 class="serie-h1">${data.name}</h1>
+      <hr/>
       <div class="small-container">
         <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="Portada de la serie ${data.name}" id="serie-poster">
         <div id="info-body">
@@ -94,10 +96,11 @@ function showSerieInfo(idSerie) {
       console.error(error);
     });
 }
+
 function showMovieInfo(idMovie) {
   let container = document.getElementById("container");
   container.className = "movie-info-container";
-  container.innerHTML = "<div class='go-back' onclick='returnToList();'>Volver atrás\n</div><h1 id='movie-title'></h1>\n<hr>";
+  container.innerHTML = "<div class='go-back' onclick='returnToList();'>Volver atrás</div>\n";
   let movieTitle = document.getElementById("movie-title");
   let smallContainer = document.createElement("div");
   smallContainer.className = "small-container";
@@ -108,17 +111,19 @@ function showMovieInfo(idMovie) {
   })
   .then(data => {
     container.innerHTML += `
+      <h1 class="movie-h1">${data.title}</h1>
+      <hr/>
       <div class="small-container">
-        <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="Portada de la película ${data.name}" id="movie-poster">
+        <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="Portada de la película ${data.title}" id="movie-poster">
         <div id="info-body">
           <div class="additional-info">
-            <p class="release-date">Fecha de estreno: ${data.first_air_date}</p>            
+            <p class="release-date">Fecha de estreno: ${data.release_date}</p>            
           </div>
         </div>
-      </div>`;
+      </div>      `;
       const additionalInfo = document.getElementsByClassName("additional-info");
-      if (data.episode_run_time > 0) {
-        additionalInfo[0].innerHTML += `<p class="runtime">Duración: ${data.episode_run_time} minutos</p>`;
+      if (data.runtime > 0) {
+        additionalInfo[0].innerHTML += `<p class="runtime">Duración: ${data.runtime} minutos</p>`;
       }
       const genres = document.createElement("p");
       genres.className = "genres";

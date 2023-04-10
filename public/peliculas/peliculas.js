@@ -54,10 +54,10 @@ window.onload = getMovieList;
  
  //PÁGINA DE PELÍCULA/SERIE/JUEGO/LIBRO. 550 deberá cambiarse por la id de la película sobre la que se haga click en la web. Adaptar código a necesidades
 
-function showMovieInfo(idMovie) {
+ function showMovieInfo(idMovie) {
   let container = document.getElementById("container");
   container.className = "movie-info-container";
-  container.innerHTML = "<div class='go-back' onclick='returnToList();'>Volver atrás\n</div><h1 id='movie-title'></h1>\n<hr>";
+  container.innerHTML = "<div class='go-back' onclick='returnToList()'>Volver atrás</div>\n";
   let movieTitle = document.getElementById("movie-title");
   let smallContainer = document.createElement("div");
   smallContainer.className = "small-container";
@@ -68,17 +68,19 @@ function showMovieInfo(idMovie) {
   })
   .then(data => {
     container.innerHTML += `
+      <h1 class="movie-h1">${data.title}</h1>
+      <hr/>
       <div class="small-container">
-        <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="Portada de la película ${data.name}" id="movie-poster">
+        <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="Portada de la película ${data.title}" id="movie-poster">
         <div id="info-body">
           <div class="additional-info">
-            <p class="release-date">Fecha de estreno: ${data.first_air_date}</p>            
+            <p class="release-date">Fecha de estreno: ${data.release_date}</p>            
           </div>
         </div>
       </div>`;
       const additionalInfo = document.getElementsByClassName("additional-info");
-      if (data.episode_run_time > 0) {
-        additionalInfo[0].innerHTML += `<p class="runtime">Duración: ${data.episode_run_time} minutos</p>`;
+      if (data.runtime > 0) {
+        additionalInfo[0].innerHTML += `<p class="runtime">Duración: ${data.runtime} minutos</p>`;
       }
       const genres = document.createElement("p");
       genres.className = "genres";
