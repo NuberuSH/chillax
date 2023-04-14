@@ -130,7 +130,7 @@ window.addEventListener("scroll", function() {
   // or window.addEventListener("scroll"....
   const st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
   setDesktopNavBackground(st);
-  console.log(st);
+  // console.log(st);
   if (st > lastScrollTop) {
     setNavNotVisible();
   } else {
