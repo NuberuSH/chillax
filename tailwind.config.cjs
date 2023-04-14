@@ -7,7 +7,7 @@ module.exports = {
         web: {
           boton: "#b41c10",
           boton2: "#f37373",
-          fondo: "#886732",
+          fondo: "#C9D5E0",
           topBar: "#4FA9A9",
           loginButton: "#A5E1AD",
           formBgDarkMode: "#1b1b32",
