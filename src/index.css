@@ -98,7 +98,7 @@ h6 {
 
 @layer components {
   .button-web {
-    @apply font-montserrat font-bold w-fit px-4 sm:px-10 py-2 text-lg sm:text-2xl bg-web-boton3 rounded-2xl mb-10 shadow-lg duration-500 ease-in-out hover:resize ring-1 hover:ring-2 ring-offset-4 hover:scale-105 ring-web-boton;
+    @apply font-montserrat font-bold w-fit px-4 sm:px-10 py-2 text-lg sm:text-2xl bg-web-navbar rounded-2xl mb-10 shadow-lg duration-500 ease-in-out hover:resize ring-1 ring-offset-1 hover:ring-2 hover:ring-offset-4 hover:scale-105 hover:ring-web-boton;
   }
 
   .web-out-of-focus {
