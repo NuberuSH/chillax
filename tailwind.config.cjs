@@ -7,6 +7,7 @@ module.exports = {
         web: {
           boton: "#b41c10",
           boton2: "#f37373",
+          boton3: "#A01D1D",
           fondo: "#C9D5E0",
           topBar: "#4FA9A9",
           loginButton: "#A5E1AD",
